@@ -3,7 +3,7 @@
 <!-- add menu bar -->
 <?php require("directives/nav_bar.php"); ?>
 
-<div id="content-container-welcome">
+<div id="content-container">
 <section id="contact" class="contact-section content-section text-center">
   <div class="container">
     <div class="col-lg-8 mx-auto">

@@ -6,9 +6,9 @@
 <?php require("directives/nav_bar.php"); ?>
 
 
-<div id="content-container-welcome">
+<div id="content-container">
 
-<section  class="content-section text-center">
+<section class="content-section text-center">
   <div class="intro-body">
     <div class="container">
       <div class="row">
@@ -27,36 +27,33 @@
     <div class="row">
 
 
-      <div class="col-md-6 content-row">
-        <div class="">
-          <a href="">
-                <img class="img-responsive" src="img/panradio.png" alt="">
+      <div class="col-md-4 content-row">
+        <div class="hovereffect">
+          <a href="users.php">
+                <img class="img-responsive" src="img/placeholder.png" alt="">
               </a>
-          <a href="">
+          <a href="users.php">
             <div class="overlay">
-              <h2>Modules</h2>
+              <h2>Users List</h2>
 
             </div>
           </a>
         </div>
       </div>
 
-      <div class="col-md-6  content-row">
-        <div class="">
-          <a href="">
-            <img class="img-responsive" src="img/lookbook.jpg" alt="">
-          </a>
-
-          <a href="">
+      <div class="col-md-4 content-row">
+        <div class="hovereffect">
+          <a href="users.php">
+                <img class="img-responsive" src="img/placeholder.png" alt="">
+              </a>
+          <a href="users.php">
             <div class="overlay">
-              <h2>Module</h2>
+              <h2>Content Creators</h2>
 
             </div>
           </a>
         </div>
       </div>
-
-
 
     </div>
 

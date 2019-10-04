@@ -3,7 +3,7 @@
 <!-- add menu bar -->
 <?php require("directives/nav_bar.php"); ?>
 
-<div id="content-container-welcome">
+<div id="content-container">
 
 <section id="contact" class="contact-section content-section text-center">
   <div class="container">
@@ -19,6 +19,24 @@
         <div class="input-wrap validate-input" data-validate="Valid input is needed!">
           <input class="input-style" type="text" name="occupation">
           <span class="focus-input2" data-placeholder="OCCUPATION"></span>
+        </div>
+
+        <div class="input-wrap validate-input" data-validate="Valid input is needed!">
+          <select class="dropdown" name="gender">
+            <option value="" disabled selected>GENDER</option>
+            <option value="Male">
+              Male
+            </option>
+            <option value="Female">
+              Female
+            </option>
+            <option value="Other">
+              Other
+            </option>
+            <option value="n/a">
+              Prefer not to tell
+            </option>
+          </select>
         </div>
 
         <div class="input-wrap validate-input" data-validate="Valid email is needed!">
