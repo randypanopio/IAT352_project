@@ -23,10 +23,8 @@
 <!-- content -->
 <section id="projects" class="content-section text-center">
   <div class="container">
-    <!-- core content -->
+    <!-- cards for modules (currentl only users) -->
     <div class="row">
-
-
       <div class="col-md-4 content-row">
         <div class="hovereffect">
           <a href="users.php">
@@ -54,10 +52,7 @@
           </a>
         </div>
       </div>
-
     </div>
-
-
   </div>
 </section>
 </div>

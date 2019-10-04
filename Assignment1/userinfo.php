@@ -12,22 +12,20 @@
                 $userID = $_GET['id'];
                 $file = file_get_contents("members.txt");
                 $usersSortedArray = array();
-
                 // create an array of each user by splitting it every new line
                 $usersArray = explode("\n", $file);
 
-
                 foreach ($usersArray as $user) {
-                    // split each user into an array of fields and add it to an array
+                    // split each user's info into an array
                     $indexer =" |@%| ";
                     $user = explode($indexer, $user);
                     array_push($usersSortedArray, $user);
                 }
 
-                // set the user based on the current ID of the GET with the page
+                // set user based on user ID
                 $displayedUser = $usersSortedArray[($userID-1)];
 
-                // get the variables for the user
+                // generate the information to be displayed about the user
                 $name = $displayedUser[1];
                 $occupation = $displayedUser[2];
                 $gender = $displayedUser[3];
@@ -46,11 +44,10 @@
                       Bio: ".$bio."
                       </p>
                             </div>";
-
             }
 
             else {
-                echo "<h1 class=\"main-header\">User not found!</h1>";
+                echo "<h1 class=\"main-header\">User not found</h1>";
             }
         ?>
       </div>

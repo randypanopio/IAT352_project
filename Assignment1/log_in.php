@@ -3,6 +3,7 @@
 <!-- add menu bar -->
 <?php require("directives/nav_bar.php"); ?>
 
+<!-- template for login page -->
 <div id="content-container">
 <section id="contact" class="contact-section content-section text-center">
   <div class="container">

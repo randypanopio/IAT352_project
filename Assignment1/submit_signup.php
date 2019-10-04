@@ -23,11 +23,9 @@
           $password = "";
           $bio = "n/a";
         }
+
         $file = "members.txt";
         $indexer = " |@%| ";
-        echo "</br>";
-
-
         if($handle = fopen($file, "a")){
           // display user info after created
           echo "<div class=\"container content-box\">
@@ -41,18 +39,20 @@
               </div>";
           echo "</br>";
 
-          //prevent writing new line (new user) if no existing user exists
+          // string to be written about user info after sign up
           $content = $name.$indexer.$occupation.$indexer.$gender.$indexer.$email.$indexer.$password.$indexer.$bio;
           $toWrite = $content;
+          //prevent writing new line (new user) if no existing user exists
           if(filesize($file) > 0) {
             //generate id for each user
             $usersArray = explode("\n", file_get_contents($file));
             $last= end($usersArray);
             $lastUser = explode($indexer, $last);
             $lastUserID = $lastUser[0];
+            //add id to new users
             $toWrite = "\n".($lastUserID+1).$indexer.$content;
           } else {
-            //first user
+            //create first user
             $toWrite = "1".$indexer.$content;
           }
           fwrite($handle,$toWrite);

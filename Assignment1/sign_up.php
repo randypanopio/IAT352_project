@@ -5,6 +5,7 @@
 
 <div id="content-container">
 
+<!-- template for sign up page -->
 <section id="contact" class="contact-section content-section text-center">
   <div class="container">
     <div class="col-lg-8 mx-auto">

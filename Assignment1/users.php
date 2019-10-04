@@ -46,7 +46,7 @@
       <div class="row">
         <?php
           //TODO sort array alphabetically
-            // display correct filtered list or display default
+            // display correct filtered list or display default, this is done through the dropdown
             if(isset($_GET["gender"])){
               $gender=$_GET["gender"];
               displayUsers($gender);
@@ -78,6 +78,7 @@
 
               }
 
+              //display the correct users based off the filter
               if($gender == "all"){
                 foreach($usersSortedArray as $user){
                   echo "<div class=\"col-md-3 content-row\">
@@ -145,14 +146,12 @@
                   }
                 }
               } else {
-                echo "oops something went wrong";
+                echo "oops something went wrong, invalid filter was used"; //display error when using non-existing filters
               }
             }
         ?>
       </div>
     </div>
-
-
   </div>
 </section>
 </div>
