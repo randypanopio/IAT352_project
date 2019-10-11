@@ -22,8 +22,8 @@
         <div class="container-contact1-form-btn">
           <div class="row">
             <div class="col-md-6 content-row">
-              <form action="regular_member_authenticate.php">
-                <button class="btn btn-default btn-sm btn-anim-i" href="regular_member_authenticate.php">
+              <form action="follower_member_authenticate.php">
+                <button class="btn btn-default btn-sm btn-anim-i" href="follower_member_authenticate.php">
                   <span>
                     Follower Sign In
                   </span>

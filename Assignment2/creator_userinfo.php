@@ -13,7 +13,7 @@ require("directives/database_info.php");?>
             if (isset($_GET['id']) && is_numeric($_GET['id']) ) {
                 $userID = ($_GET['id']);
 
-                $user_info_query = "SELECT * FROM `creator` WHERE id=".$userID.";";
+                $user_info_query = "SELECT * FROM `creators` WHERE id=".$userID.";";
                 $user_result = $db->query($user_info_query);
                 if($user_result) {
                   $user = $user_result->fetch_array(MYSQLI_ASSOC);

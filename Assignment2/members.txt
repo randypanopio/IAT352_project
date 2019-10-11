@@ -1,4 +1,0 @@
-1 |@%| Amy Wallace |@%| Hairdresser |@%| Female |@%| aw@wemail.com |@%| 123abc123 |@%| I like stuff
-2 |@%| Nick Nichols |@%| Teacher |@%| Male |@%| nn22@edu.ca |@%| histt123 |@%| history, english
-3 |@%| Rashid Ibrahim |@%| Video Editor |@%| Male |@%| fwa@tt.ca |@%| 308nsaekjfnb32989h |@%| yt.com
-4 |@%| Kana Watanabe |@%| Seamstress & Gymnast |@%| n/a |@%| wtnb@email.jp |@%| 3knoriu2gv |@%| :)

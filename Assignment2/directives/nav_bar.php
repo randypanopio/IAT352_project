@@ -24,11 +24,19 @@ if($_SERVER["HTTPS"] != "on") {
           }
           $_SESSION['callback_URL'] = (isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
-          if (isset($_SESSION['valid_follower']) || isset($_SESSION['valid_creator'])) {
-            $query = "SELECT `id`, `username` FROM `creator` WHERE email=\"".($_SESSION['valid_creator'])."\";";
+          if(isset($_SESSION['valid_creator']) || isset($_SESSION['valid_follower'])) {
+            echo "
+            <li class=\"nav-item profile-image-cont\">
+              <div class=\"profile-image\" ></div>
+            </li>
+            ";
+          }
+
+          if (isset($_SESSION['valid_creator'])) {
+            $query = "SELECT `id`, `username` FROM `creators` WHERE username=\"".($_SESSION['valid_creator'])."\";";
             $result = $db->query($query);
             if ($result) {
-                if ($result->num_rows > 0) {
+                if ($result->num_rows == 1) {
                     $user = $result->fetch_array(MYSQLI_ASSOC);
                     echo "<li class=\"nav-item\">
                       <a class=\"nav-link js-scroll-trigger\">Welcome ".$user['username']."</a>
@@ -38,8 +46,7 @@ if($_SERVER["HTTPS"] != "on") {
                       <a class=\"nav-link js-scroll-trigger\" href=\"logout.php\">Log Out</a>
                     </li>
                     ";
-                }
-                else {
+                } else {
                   echo "<li class=\"nav-item\">
                     <a class=\"nav-link js-scroll-trigger\">Welcome User</a>
                   </li>";
@@ -50,8 +57,36 @@ if($_SERVER["HTTPS"] != "on") {
                   ";
                 }
             }
-
-
+            if ($db->connect_error)  {
+                die('Connect Error: ' . $db->connect_error);
+            }
+            //Close database connection
+            $db->close();
+          } else if (isset($_SESSION['valid_follower'])){
+            $query = "SELECT `id`, `username` FROM `followers` WHERE username=\"".($_SESSION['valid_follower'])."\";";
+            $result = $db->query($query);
+            if ($result) {
+                if ($result->num_rows == 1) {
+                    $user = $result->fetch_array(MYSQLI_ASSOC);
+                    echo "<li class=\"nav-item\">
+                      <a class=\"nav-link js-scroll-trigger\">Welcome ".$user['username']."</a>
+                    </li>";
+                    echo "
+                    <li class=\"nav-item\">
+                      <a class=\"nav-link js-scroll-trigger\" href=\"logout.php\">Log Out</a>
+                    </li>
+                    ";
+                } else {
+                  echo "<li class=\"nav-item\">
+                    <a class=\"nav-link js-scroll-trigger\">Welcome User</a>
+                  </li>";
+                  echo "
+                  <li class=\"nav-item\">
+                    <a class=\"nav-link js-scroll-trigger\" href=\"logout.php\">Log Out</a>
+                  </li>
+                  ";
+                }
+            }
             if ($db->connect_error)  {
                 die('Connect Error: ' . $db->connect_error);
             }

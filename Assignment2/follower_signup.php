@@ -10,16 +10,11 @@
   <div class="container">
     <div class="col-lg-8 mx-auto">
       <h2>Followers Sign Up</h2>
-      <form class="form-wrap validate-form mx-auto" name="input" action="submit_signup.php" method="post">
+      <form class="form-wrap validate-form mx-auto" name="input" action="follower_submit_signup.php" method="post">
 
         <div class="input-wrap validate-input" data-validate="Username is needed!">
           <input class="input-style" type="text" name="username">
           <span class="focus-input2" data-placeholder="USERNAME"></span>
-        </div>
-
-        <div class="input-wrap validate-input" data-validate="Name is needed!">
-          <input class="input-style" type="text" name="name">
-          <span class="focus-input2" data-placeholder="NAME"></span>
         </div>
 
         <div class="input-wrap validate-input" data-validate="Valid email is needed!">
@@ -30,11 +25,6 @@
         <div class="input-wrap validate-input" data-validate="Password is needed!">
           <input class="input-style" type="password" name="password">
           <span class="focus-input2" data-placeholder="PASSWORD"></span>
-        </div>
-
-        <div class="input-wrap validate-input" data-validate="Bio is needed">
-          <textarea class="input-style" name="bio"></textarea>
-          <span class="focus-input2" data-placeholder="BIO"></span>
         </div>
 
         <div class="container-contact1-form-btn">

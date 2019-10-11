@@ -4,7 +4,6 @@
 require("directives/nav_bar.php");
 // connect to db
 require("directives/database_info.php");?>
-
 <div id="content-container">
 <section id="contact" class="contact-section content-section text-center">
   <div class="container">
@@ -50,7 +49,7 @@ require("directives/database_info.php");?>
 
       <div class="row">
         <?php
-        $query = "SELECT * FROM `creator` ORDER BY `creator`.`id` ASC";
+        $query = "SELECT * FROM `creators` ORDER BY `creators`.`id` ASC";
         $result = $db->query($query);
 
         if(isset($_GET["genre"])){
@@ -62,10 +61,10 @@ require("directives/database_info.php");?>
               while ($user = $result->fetch_assoc()) {
                   echo "<div class=\"col-md-3 content-row\">
                     <div class=\"hovereffect\">
-                      <a href=\"userinfo.php?id=".$user['id']."\">
+                      <a href=\"creator_userinfo.php?id=".$user['id']."\">
                             <img class=\"img-responsive\" src=\"img/placeholder.png\" alt=\"img\">
                           </a>
-                      <a href=\"userinfo.php?id=".$user['id']."\">
+                      <a href=\"creator_userinfo.php?id=".$user['id']."\">
                         <div class=\"overlay\">
                           <h2>".$user['username']."</h2>
                         </div>
@@ -84,17 +83,17 @@ require("directives/database_info.php");?>
 
         // TODO fix filter
         function filtUsers($genre){
-          $filterQuery = "SELECT * FROM `creator` ORDER BY `creator`.`id` ASC";
+          $filterQuery = "SELECT * FROM `creators` ORDER BY `creators`.`id` ASC";
           $result = $db->query($filterQuery);
               /* fetch associative array */
               $row=mysqli_fetch_assoc($result);
               while ($user = $result->fetch_assoc()) {
                   echo "<div class=\"col-md-3 content-row\">
                     <div class=\"hovereffect\">
-                      <a href=\"userinfo.php?id=".$user['id']."\">
+                      <a href=\"creator_userinfo.php?id=".$user['id']."\">
                             <img class=\"img-responsive\" src=\"img/placeholder.png\" alt=\"img\">
                           </a>
-                      <a href=\"userinfo.php?id=".$user['id']."\">
+                      <a href=\"creator_userinfo.php?id=".$user['id']."\">
                         <div class=\"overlay\">
                           <h2>".$user['username']."</h2>
                         </div>

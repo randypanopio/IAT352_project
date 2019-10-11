@@ -3,6 +3,19 @@
 /* css version of google import font */
 @import url('https://fonts.googleapis.com/css?family=Cabin:400,700|Lato:300,300i,400');
 
+
+.profile-image {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  margin-right: 2px;
+  border-radius: 50%;
+  vertical-align: middle;
+  background-color: #952d49;
+}
+
 .filter-dropdown {
   float: right;
   width: 100px;

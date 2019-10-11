@@ -27,7 +27,7 @@
     <div class="row">
       <div class="col-md-4 content-row">
         <div class="hovereffect">
-          <a href="users.php">
+          <a href="content_creators_members.php">
                 <img class="img-responsive" src="img/placeholder.png" alt="">
               </a>
           <a href="content_creators_members.php">
@@ -40,10 +40,10 @@
       </div>
       <div class="col-md-4 content-row">
         <div class="hovereffect">
-          <a href="users.php">
+          <a href="follower_members.php">
                 <img class="img-responsive" src="img/placeholder.png" alt="">
               </a>
-          <a href="users.php">
+          <a href="follower_members.php">
             <div class="overlay">
               <h2>Follower Members</h2>
 
