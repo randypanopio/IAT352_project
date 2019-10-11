@@ -12,6 +12,6 @@ $dbname = "randy_panopio";
 if ($db->connect_error)  {
     die('Connect Error: ' . $db->connect_error);
 } else {
-  echo 'connection successful';
+  // echo 'connection successful';
 }
 ?>

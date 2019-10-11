@@ -8,29 +8,44 @@
 <section id="contact" class="contact-section content-section text-center">
   <div class="container">
     <div class="col-lg-8 mx-auto">
+      <?php
+      if (isset($_SESSION['valid_member']) || isset($_SESSION['valid_visitor']))
+      {?>
+          <h2>Already logged in!</h2>
+          <p>You are already logged in! Please <a href="logout.php">log out</a> if you would like to log in to another account.</p>
+      <?php
+      } else {
+      ?>
       <h2>Sign In</h2>
-      <form class="form-wrap validate-form mx-auto" name="input" method="get">
-        <div class="input-wrap validate-input" data-validate="Valid email is needed!">
-          <input class="input-style" type="text" name="email">
-          <span class="focus-input2" data-placeholder="EMAIL"></span>
-        </div>
-
-        <div class="input-wrap validate-input" data-validate="Password is needed!">
-          <input class="input-style" type="password" name="password">
-          <span class="focus-input2" data-placeholder="PASSWORD"></span>
-        </div>
+        <p>Please select your account type
+        </p>
         <div class="container-contact1-form-btn">
-          <button class="btn btn-default btn-sm btn-anim-i">
-            <span>
-              Login
-            </span>
-          </button>
-        </div>
+          <div class="row">
+            <div class="col-md-6 content-row">
+              <form action="regular_member_authenticate.php">
+                <button class="btn btn-default btn-sm btn-anim-i" href="regular_member_authenticate.php">
+                  <span>
+                    Follower Sign In
+                  </span>
+                </button>
+              </form>
 
-        <br />
-        <br />
-        <p>Don't have an account? <a href="sign_up.php">Create an account</a></p>
-      </form>
+            </div>
+            <div class="col-md-6 content-row">
+              <form action="creator_member_authenticate.php">
+                <button class="btn btn-default btn-sm btn-anim-i" href="creator_member_authenticate.php">
+                  <span>
+                    Content Creator Sign In
+                  </span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <p>Don't have an account? <a href="sign_up.php">Sign up</a></p>
+      <?php
+      }
+      ?>
     </div>
 
 
