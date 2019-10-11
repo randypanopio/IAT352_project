@@ -1,49 +1,36 @@
 <!-- add header - start -->
-<?php require("directives/header.php"); ?>
-<!-- add menu bar -->
-<?php require("directives/nav_bar.php"); ?>
+<?php require("directives/header.php");
+// add menu bar
+require("directives/nav_bar.php");
+// connect to db
+require("directives/database_info.php");?>
 
 <div id="content-container">
   <div class="container">
     <div class="col-lg-12 mx-auto">
       <div class="row">
         <?php
-            if (is_numeric($_GET['id'])) {
-                $userID = $_GET['id'];
-                $file = file_get_contents("members.txt");
-                $usersSortedArray = array();
-                // create an array of each user by splitting it every new line
-                $usersArray = explode("\n", $file);
+            if (isset($_GET['id']) && is_numeric($_GET['id']) ) {
+                $userID = ($_GET['id']);
 
-                foreach ($usersArray as $user) {
-                    // split each user's info into an array
-                    $indexer =" |@%| ";
-                    $user = explode($indexer, $user);
-                    array_push($usersSortedArray, $user);
+                $user_info_query = "SELECT * FROM `creator` WHERE id=".$userID.";";
+                $user_result = $db->query($user_info_query);
+                if($user_result) {
+                  $user = $user_result->fetch_array(MYSQLI_ASSOC);
+
+                  echo "<div class=\"col-md-3 content-row\">
+                            <img class=\"img-responsive\" src=\"img/placeholder.png\" alt=\"img\">
+                        </div>
+                        <div class=\"col-md-9 content-row\">
+                        <p>
+                        Username: ".$user['username']."<br />
+                        Name: ".$user['name']."<br />
+                        Genre: ".$user['genre']."<br />
+                        Email: ".$user['email']."<br />
+                        Bio: ".$user['bio']."
+                        </p>
+                              </div>";
                 }
-
-                // set user based on user ID
-                $displayedUser = $usersSortedArray[($userID-1)];
-
-                // generate the information to be displayed about the user
-                $name = $displayedUser[1];
-                $occupation = $displayedUser[2];
-                $gender = $displayedUser[3];
-                $email = $displayedUser[4];
-                $bio = $displayedUser[6];
-
-                echo "<div class=\"col-md-3 content-row\">
-                          <img class=\"img-responsive\" src=\"img/placeholder.png\" alt=\"img\">
-                      </div>
-                      <div class=\"col-md-9 content-row\">
-                      <p>
-                      Name: ".$name."<br />
-                      Occupation: ".$occupation."<br />
-                      Gender: ".$gender."<br />
-                      Email: ".$email."<br />
-                      Bio: ".$bio."
-                      </p>
-                            </div>";
             }
 
             else {

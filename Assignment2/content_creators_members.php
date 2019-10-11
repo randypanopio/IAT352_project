@@ -3,7 +3,7 @@
 // add menu bar
 require("directives/nav_bar.php");
 // connect to db
-require_once("directives/database_info.php");?>
+require("directives/database_info.php");?>
 
 <div id="content-container">
 <section id="contact" class="contact-section content-section text-center">
@@ -82,10 +82,12 @@ require_once("directives/database_info.php");?>
           }
         }
 
+        // TODO fix filter
         function filtUsers($genre){
           $filterQuery = "SELECT * FROM `creator` ORDER BY `creator`.`id` ASC";
-          $newResult = $db->query($filterQuery);
+          $result = $db->query($filterQuery);
               /* fetch associative array */
+              $row=mysqli_fetch_assoc($result);
               while ($user = $result->fetch_assoc()) {
                   echo "<div class=\"col-md-3 content-row\">
                     <div class=\"hovereffect\">
@@ -102,33 +104,8 @@ require_once("directives/database_info.php");?>
               }
               /* free result set */
               $result->free();
-
           $db->close();
         }
-
-
-
-        // if ($result = $db->query($query)) {
-        //     /* fetch associative array */
-        //     while ($user = $result->fetch_assoc()) {
-        //         echo "<div class=\"col-md-3 content-row\">
-        //           <div class=\"hovereffect\">
-        //             <a href=\"userinfo.php?id=".$user['id']."\">
-        //                   <img class=\"img-responsive\" src=\"img/placeholder.png\" alt=\"img\">
-        //                 </a>
-        //             <a href=\"userinfo.php?id=".$user['id']."\">
-        //               <div class=\"overlay\">
-        //                 <h2>".$user['username']."</h2>
-        //               </div>
-        //             </a>
-        //           </div>
-        //         </div>";
-        //     }
-        //     /* free result set */
-        //     $result->free();
-        // }
-        /* close connection */
-
         ?>
       </div>
     </div>
