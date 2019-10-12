@@ -34,7 +34,7 @@ require("directives/database_info.php");?>
                 }
 
                 // display posts
-                $user_posts_query = "SELECT * FROM testpost WHERE user_id=".$userID;
+                $user_posts_query = "SELECT * FROM posts WHERE user_id=".$userID;
                 $user_posts_result = $db->query($user_posts_query);
 
                 echo "<div class='container'>
@@ -48,6 +48,8 @@ require("directives/database_info.php");?>
                             echo "<div class='post-container'>
                                 <div class='post-contents'>
                                     <b>".$post['title']."</b>
+                                    <p>Posted on ".$post['date']."</p>
+                                    <br />
                                     <p>".$post['content']."</p>
                                     <hr />
                                 </div>

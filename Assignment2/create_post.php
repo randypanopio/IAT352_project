@@ -6,7 +6,7 @@
 // connect to db
 require_once("directives/database_info.php");
 
-
+// TODO bind user to each post
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
@@ -17,7 +17,7 @@ if (isset($_SESSION['valid_follower']) || isset($_SESSION['valid_creator']) ) {
   $content = !empty($_POST['content']) ? $_POST['content'] : "";
 
   // Prepared statement
-  if (!($stmt = $db->prepare("INSERT INTO  `testpost`(`user_id`, `title`, `content`) VALUES (?, ?, ?)"))) {
+  if (!($stmt = $db->prepare("INSERT INTO  `posts`(`user_id`, `title`, `content`, `date`) VALUES (?, ?, ?, NOW())"))) {
       echo "Prepare failed: (" . $db->errno . ") " . $db->error;
   }
 
