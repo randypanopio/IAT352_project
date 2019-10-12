@@ -33,6 +33,7 @@ require("directives/database_info.php");?>
                 }
             }
 
+
             else {
                 echo "<h1 class=\"main-header\">User not found</h1>";
             }
