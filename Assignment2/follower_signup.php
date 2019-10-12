@@ -13,17 +13,17 @@
       <form class="form-wrap validate-form mx-auto" name="input" action="follower_submit_signup.php" method="post">
 
         <div class="input-wrap validate-input" data-validate="Username is needed!">
-          <input class="input-style" type="text" name="username">
+          <input class="input-style" type="text" name="username" required>
           <span class="focus-input2" data-placeholder="USERNAME"></span>
         </div>
 
         <div class="input-wrap validate-input" data-validate="Valid email is needed!">
-          <input class="input-style" type="text" name="email">
+          <input class="input-style" type="text" name="email" required>
           <span class="focus-input2" data-placeholder="EMAIL"></span>
         </div>
 
         <div class="input-wrap validate-input" data-validate="Password is needed!">
-          <input class="input-style" type="password" name="password">
+          <input class="input-style" type="password" name="password" required>
           <span class="focus-input2" data-placeholder="PASSWORD"></span>
         </div>
 

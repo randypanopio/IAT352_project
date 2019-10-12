@@ -11,7 +11,5 @@ $dbname = "randy_panopio";
 // if connection failed, skip the rest of PHP code, and print an error
 if ($db->connect_error)  {
     die('Connect Error: ' . $db->connect_error);
-} else {
-  // echo 'connection successful';
 }
 ?>

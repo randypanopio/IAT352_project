@@ -16,7 +16,7 @@ require("directives/database_info.php");?>
             <div class="input-wrap validate-input">
               <select onchange="this.form.submit()" class="dropdown" name="genre">
                 <option value="" disabled selected>Genre</option>
-                <option value="all">
+                <option value="All">
                   All
                 </option>
                 <option value="Entertainment">
@@ -36,74 +36,73 @@ require("directives/database_info.php");?>
           </div>
         </form>
       </div>
-
-
       <div class="row">
         <?php
 
-        ?>
-        <br />
-        <br />
-      </div>
-
-
-      <div class="row">
-        <?php
-        $query = "SELECT * FROM `creators` ORDER BY `creators`.`id` ASC";
-        $result = $db->query($query);
 
         if(isset($_GET["genre"])){
           $genre=$_GET["genre"];
-          filtUsers($genre);
-        } else {
+          if($genre == "All" || $genre == "") {
+            $query = "SELECT * FROM `creators` ORDER BY `creators`.`id` ASC";
+          } else {
+            $query = "SELECT * FROM creators WHERE genre LIKE '%{$genre}%'";
+          }
+          $result = $db->query($query);
           if ($result = $db->query($query)) {
               /* fetch associative array */
-              while ($user = $result->fetch_assoc()) {
-                  echo "<div class=\"col-md-3 content-row\">
-                    <div class=\"hovereffect\">
-                      <a href=\"creator_userinfo.php?id=".$user['id']."\">
-                            <img class=\"img-responsive\" src=\"img/placeholder.png\" alt=\"img\">
-                          </a>
-                      <a href=\"creator_userinfo.php?id=".$user['id']."\">
-                        <div class=\"overlay\">
-                          <h2>".$user['username']."</h2>
-                        </div>
-                      </a>
-                    </div>
-                  </div>";
-              }
-              $result->free();
-              $db->close();
-          } else {
-            echo "<div class=\"col-md-3 content-row\">
-              <h3>no users exist</h3>
-            </div>";
-          }
-        }
+            while ($user = $result->fetch_assoc()) {
+                echo "<div class=\"col-md-3 content-row\">
+                  <div class=\"hovereffect\">
+                    <a href=\"creator_userinfo.php?id=".$user['id']."\">
+                          <img class=\"img-responsive\" src=\"img/placeholder.png\" alt=\"img\">
+                        </a>
+                    <a href=\"creator_userinfo.php?id=".$user['id']."\">
+                      <div class=\"overlay\">
+                        <h2>".$user['username']."</h2>
+                      </div>
+                    </a>
+                  </div>
+                </div>";
+            }
 
-        // TODO fix filter
-        function filtUsers($genre){
-          $filterQuery = "SELECT * FROM `creators` ORDER BY `creators`.`id` ASC";
-          $result = $db->query($filterQuery);
-              /* fetch associative array */
-              $row=mysqli_fetch_assoc($result);
-              while ($user = $result->fetch_assoc()) {
-                  echo "<div class=\"col-md-3 content-row\">
-                    <div class=\"hovereffect\">
-                      <a href=\"creator_userinfo.php?id=".$user['id']."\">
-                            <img class=\"img-responsive\" src=\"img/placeholder.png\" alt=\"img\">
-                          </a>
-                      <a href=\"creator_userinfo.php?id=".$user['id']."\">
-                        <div class=\"overlay\">
-                          <h2>".$user['username']."</h2>
-                        </div>
-                      </a>
-                    </div>
-                  </div>";
-              }
-              /* free result set */
-              $result->free();
-          $db->close();
+            if(mysqli_num_rows($result) == 0) {
+              echo "<div class=\"col-md-3 content-row\">
+                <h3>no users exist</h3>
+              </div>";
+            }
+            $result->free();
+            $db->close();
+            } else {
+              echo "<div class=\"col-md-3 content-row\">
+                <h3>no users exist</h3>
+              </div>";
+            }
+        } else {
+          $query = "SELECT * FROM `creators` ORDER BY `creators`.`id` ASC";
+          $result = $db->query($query);
+            if ($result = $db->query($query)) {
+                /* fetch associative array */
+                while ($user = $result->fetch_assoc()) {
+                    echo "<div class=\"col-md-3 content-row\">
+                      <div class=\"hovereffect\">
+                        <a href=\"creator_userinfo.php?id=".$user['id']."\">
+                              <img class=\"img-responsive\" src=\"img/placeholder.png\" alt=\"img\">
+                            </a>
+                        <a href=\"creator_userinfo.php?id=".$user['id']."\">
+                          <div class=\"overlay\">
+                            <h2>".$user['username']."</h2>
+                          </div>
+                        </a>
+                      </div>
+                    </div>";
+                }
+                $result->free();
+                $db->close();
+            } else {
+              echo "<div class=\"col-md-3 content-row\">
+                <h3>no users exist</h3>
+              </div>";
+            }
         }
         ?>
       </div>
