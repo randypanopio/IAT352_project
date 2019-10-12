@@ -1,8 +1,6 @@
 <!-- Top navigation bar -->
 <?php
 if($_SERVER["HTTPS"] != "on") {
-    // header("Location: https://". str_replace(":8080", "", $_SERVER['HTTP_HOST']) .$_SERVER['REQUEST_URI']);
-    // exit;
 }
 ?>
 <div id="main-menu-bar-container">
