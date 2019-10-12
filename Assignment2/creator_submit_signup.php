@@ -32,7 +32,6 @@
 	// execute database query
     if ($stmt->execute()) {
         echo "Success!\n";
-        printf("%d Row inserted.\n", $stmt->affected_rows);
         $stmt->close();
         header('Location: signup_success.php');
     }
