@@ -1,8 +1,4 @@
 <!-- Top navigation bar -->
-<?php
-if($_SERVER["HTTPS"] != "on") {
-}
-?>
 <div id="main-menu-bar-container">
     <div id="main-menu-bar">
       <!-- Main navigation bar on all pages -->

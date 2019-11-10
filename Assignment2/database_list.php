@@ -14,11 +14,15 @@ require("directives/database_info.php");?>
           <form name="input" action="database_list.php" method="post">
             <p>Filter by:
               <select name="filter_choice">
-                <option value="parks" <?php if($_POST['filter_choice'] == 'parks') echo"selected"; ?>>Parks</option>
-                <option value="arts" <?php if($_POST['filter_choice'] == 'arts') echo"selected"; ?>>Art</option>
+                <option value="parks" <?php if(isset($_POST['filter_choice'])){
+                  if($_POST['filter_choice'] == 'parks') echo"selected";
+                } else {
+                  echo"selected";
+                } ?>>Parks</option>
+                <option value="public_arts" <?php if(isset($_POST['filter_choice'])){
+                  if($_POST['filter_choice'] == 'public_arts') echo"selected";
+                }?>>Art</option>
               </select>
-
-              <!-- set php logic to autofill inputs from previous search -->
               <input type="text" name="search_string" value="<?php echo isset($_POST['search_string']) ? $_POST['search_string'] : '' ?>" >
               <button type="submit"  name="submit" value="submit">Search</button>
           </p>
@@ -38,32 +42,61 @@ require("directives/database_info.php");?>
             $search_string = $_POST['search_string'];
             $filter_choice = $_POST['filter_choice'];
 
+            // establish sql string to be queried
             $finalWhereString = "parks.Name=".'"'.$search_string.'"';
             $toBe_searched_string = '"'.$search_string."%".'"';
-
             $fromString = $filter_choice;
             if ($fromString == "") $fromString = "*";
-            // final sql statement to be used to query the db
-            $sql = "SELECT * FROM $fromString WHERE Name LIKE $toBe_searched_string";
-            echo "SQL STMT: ".$sql."<br /><br /><br />";
-            // $sql = "SELECT * FROM parks INNER JOIN orderdetails ON orders.orderNumber = orderdetails.orderNumber INNER JOIN products ON orderdetails.productCode = products.productCode WHERE $finalWhereString";
+            $whereString = "";
+            if($filter_choice == "parks") {
+              $whereString = "Name";
+            } else if ($filter_choice == "public_arts") {
+              $whereString = "SiteName";
+            }
+            $sql = "SELECT * FROM $fromString WHERE $whereString LIKE $toBe_searched_string"; // final sql statement
+            // echo "SQL STMT: ".$sql."<br /><br /><br />";
 
             //query result
             if ($result = $db->query($sql)) {
-              echo "<table class=\"xlTable\"><tr>";
-              echo "<th>Park Name</th>";
-              echo "<th>Address</th>";
-              echo "<th>Website URL</th>";
-              echo "</tr>";
 
-              while ($data = $result->fetch_assoc()){
-                echo "<tr>";
-                echo "<td>".$data['Name']."</td>";
-                echo "<td>".$data['StreetNumber']." ".$data['StreetName']." ".$data['EWStreet']." ".$data['NSStreet']." ".$data['NeighbourhoodName']."</td>";
-                echo "<td><a href=\"".$data['NeighbourhoodURL']."\"  target=\"_blank\">Link</a></td>";
-
+              if($filter_choice == "parks") { // show parks list
+                echo "<table class=\"xlTable\"><tr>";
+                echo "<th>Park Name</th>";
+                echo "<th>Address</th>";
+                echo "<th>Website URL</th>";
                 echo "</tr>";
+
+                while ($data = $result->fetch_assoc()){
+                  echo "<tr>";
+                  echo "<td>".$data['Name']."</td>";
+                  echo "<td>".$data['StreetNumber']." ".$data['StreetName']." ".$data['EWStreet']." ".$data['NSStreet']." ".$data['NeighbourhoodName']."</td>";
+                  echo "<td><a href=\"".$data['NeighbourhoodURL']."\"  target=\"_blank\">Link</a></td>";
+
+                  echo "</tr>";
+                }
+              } else if ($filter_choice == "public_arts") { //show the public arts list
+                echo "<table class=\"xlTable\"><tr>";
+                echo "<th>Site Name</th>";
+                echo "<th>Address</th>";
+                echo "<th>Status</th>";
+                echo "<th>Website URL</th>";
+                // echo "<th>Image URL</th>";
+                echo "</tr>";
+
+                while ($data = $result->fetch_assoc()){
+                  // if(!is_null($data.['SiteName'])){ //display only labeled sites
+                    echo "<tr>";
+                    echo "<td>".$data['SiteName']."</td>";
+                    echo "<td>".$data['SiteAddress']."</td>";
+                    echo "<td>".$data['Status']."</td>";
+                    echo "<td><a href=\"".$data['URL']."\"  target=\"_blank\">Link</a></td>";
+                    // echo "<td><a href=\"".$data['PhotoURL']."\"  target=\"_blank\">Link</a></td>";
+
+                    echo "</tr>";
+                  // }
+                }
               }
+
               echo "</table>";
             } else {
               echo "<h2>Failed to fetch result</h2><br />";
