@@ -12,49 +12,55 @@ require("directives/database_info.php");?>
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <form name="input" action="database_list.php" method="post">
-            <p>Search
+            <p>Filter by:
+              <select name="filter_choice">
+                <option value="parks" <?php if($_POST['filter_choice'] == 'parks') echo"selected"; ?>>Parks</option>
+                <option value="arts" <?php if($_POST['filter_choice'] == 'arts') echo"selected"; ?>>Art</option>
+              </select>
+
               <!-- set php logic to autofill inputs from previous search -->
               <input type="text" name="search_string" value="<?php echo isset($_POST['search_string']) ? $_POST['search_string'] : '' ?>" >
-
+              <button type="submit"  name="submit" value="submit">Search</button>
           </p>
-            <button type="submit"  name="submit" value="submit">Search</button>
           </form>
         </div>
 
       </div>
-      <div class="">
-        <!-- db logic n display -->
-        <?php
+      <?php
+          //db logic n display
           //first check if the form has been submitted
           if(isset($_POST['submit'])) {
+            echo "<div class=\"row\">";
+            echo "<h3>Results</h3>";
+            echo "</div>";
+            echo "<div class=\"row\">";
 
             $search_string = $_POST['search_string'];
+            $filter_choice = $_POST['filter_choice'];
 
             $finalWhereString = "parks.Name=".'"'.$search_string.'"';
-            // final sql statement to be used to query the db
-            $sql = "SELECT Name FROM parks WHERE $finalWhereString";
-            // $sql = "SELECT * FROM parks INNER JOIN orderdetails ON orders.orderNumber = orderdetails.orderNumber INNER JOIN products ON orderdetails.productCode = products.productCode WHERE $finalWhereString";
+            $toBe_searched_string = '"'.$search_string."%".'"';
 
-            echo "SQL Query: <br />".$sql;
+            $fromString = $filter_choice;
+            if ($fromString == "") $fromString = "*";
+            // final sql statement to be used to query the db
+            $sql = "SELECT * FROM $fromString WHERE Name LIKE $toBe_searched_string";
+            echo "SQL STMT: ".$sql."<br /><br /><br />";
+            // $sql = "SELECT * FROM parks INNER JOIN orderdetails ON orders.orderNumber = orderdetails.orderNumber INNER JOIN products ON orderdetails.productCode = products.productCode WHERE $finalWhereString";
 
             //query result
             if ($result = $db->query($sql)) {
-              echo "<h2>Result</h2><br />";
-
-              echo "<table><tr>";
-              // create logic to filter out the unchecked column options
-              if(isset($_POST['order_number']))echo "<th>Order Number</th>";
-              if(isset($_POST['order_date']))echo "<th>Order Date</th>";
-              if(isset($_POST['ship_date']))echo "<th>Shipped Date</th>";
-              if(isset($_POST['product_name']))echo "<th>Product Name</th>";
-              if(isset($_POST['description']))echo "<th>Product Description</th>";
-              if(isset($_POST['quantity']))echo "<th>Quantity Ordered</th>";
-              if(isset($_POST['price']))echo "<th>Price Each</th>";
+              echo "<table class=\"xlTable\"><tr>";
+              echo "<th>Park Name</th>";
+              echo "<th>Address</th>";
+              echo "<th>Website URL</th>";
               echo "</tr>";
 
               while ($data = $result->fetch_assoc()){
                 echo "<tr>";
                 echo "<td>".$data['Name']."</td>";
+                echo "<td>".$data['StreetNumber']." ".$data['StreetName']." ".$data['EWStreet']." ".$data['NSStreet']." ".$data['NeighbourhoodName']."</td>";
+                echo "<td><a href=\"".$data['NeighbourhoodURL']."\"  target=\"_blank\">Link</a></td>";
 
                 echo "</tr>";
               }
