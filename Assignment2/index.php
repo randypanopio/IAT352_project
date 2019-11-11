@@ -25,19 +25,20 @@
 <section id="projects" class="content-section text-center">
   <div class="container">
     <div class="row">
-      <div class="col-md-4 content-row">
+      <div class="col-md-12 content-row map-card">
         <div class="hovereffect">
           <a href="content_creators_members.php">
-                <img class="img-responsive" src="img/placeholder.png" alt="">
+                <img class="img-responsive" src="img/samplemap.jpg" alt="">
               </a>
           <a href="database_list.php">
             <div class="overlay">
               <h2>Search Locations</h2>
-
             </div>
           </a>
         </div>
       </div>
+    </div>
+    <div class="row">
       <div class="col-md-4 content-row">
         <div class="hovereffect">
           <a href="content_creators_members.php">
