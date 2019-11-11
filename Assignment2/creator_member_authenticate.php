@@ -102,7 +102,7 @@ if (isset($_SESSION['valid_creator'])) {
               <div class="container">
                 <div class="col-lg-10 mx-auto">
                   <form class="form-wrap validate-form mx-auto" name="input" action="creator_member_authenticate.php" method="post">
-                      <h2>Content Creator Sign In</h2>
+                      <h2>Content Photographer Sign In</h2>
 
                       <div class="input-wrap validate-input" data-validate="Username is needed!">
                         <input class="input-style" type="username" name="username" id="usernameInput" required>

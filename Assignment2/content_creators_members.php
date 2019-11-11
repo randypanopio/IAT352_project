@@ -8,7 +8,7 @@ require("directives/database_info.php");?>
 <section id="contact" class="contact-section content-section text-center">
   <div class="container">
     <div class="col-lg-12 mx-auto">
-      <h2>List of Registered Content Creators</h2>
+      <h2>List of Registered Photographers</h2>
       <div class="row">
         <p>filter by </p>
         <form>

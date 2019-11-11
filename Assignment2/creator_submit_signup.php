@@ -2,6 +2,7 @@
     require_once("directives/database_info.php");
 
     // Prepared statement
+    // TODO recreate the db struc to refer genre as skill level
     if (!($stmt = $db->prepare("INSERT INTO  `creators`(`username`, `email`, `password`, `name`, `genre`, `bio`)
         VALUES (?, ?, ?, ?, ?, ?)"))) {
         echo "Prepare failed: (" . $db->errno . ") " . $db->error;

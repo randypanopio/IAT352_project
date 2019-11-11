@@ -9,7 +9,7 @@
 <section id="contact" class="contact-section content-section text-center">
   <div class="container">
     <div class="col-lg-8 mx-auto">
-      <h2>Content Creator Sign Up</h2>
+      <h2>Photographer Sign Up</h2>
       <form class="form-wrap validate-form mx-auto" name="input" action="creator_submit_signup.php" method="post">
 
         <div class="input-wrap validate-input" data-validate="Username is needed!">
