@@ -20,7 +20,7 @@
     </div>
   </div>
 </section>
-
+<!-- TODO replace all "creators" context to "photographers" -->
 <!-- content -->
 <section id="projects" class="content-section text-center">
   <div class="container">
@@ -45,7 +45,7 @@
               </a>
           <a href="content_creators_members.php">
             <div class="overlay">
-              <h2>View Photogarpher Members</h2>
+              <h2>View Photographer Members</h2>
 
             </div>
           </a>
