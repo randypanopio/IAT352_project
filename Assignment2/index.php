@@ -46,7 +46,7 @@
       <div class="col-md-4 content-row">
         <div class="hovereffect">
           <a href="photographer_members.php">
-                <img class="img-responsive" src="img/placeholder.png" alt="">
+                <img class="img-responsive" src="img/cam2.png" alt="">
               </a>
           <a href="photographer_members.php">
             <div class="overlay">
@@ -59,7 +59,7 @@
       <div class="col-md-4 content-row">
         <div class="hovereffect">
           <a href="follower_members.php">
-                <img class="img-responsive" src="img/placeholder.png" alt="">
+                <img class="img-responsive" src="img/cam1.png" alt="">
               </a>
           <a href="follower_members.php">
             <div class="overlay">
