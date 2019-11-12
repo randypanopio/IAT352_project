@@ -27,7 +27,7 @@
           }
 
           if (isset($_SESSION['valid_creator'])) {
-            $query = "SELECT `id`, `username` FROM `creators` WHERE username=\"".($_SESSION['valid_creator'])."\";";
+            $query = "SELECT `id`, `username` FROM `photographers` WHERE username=\"".($_SESSION['valid_creator'])."\";";
             $result = $db->query($query);
             if ($result) {
                 if ($result->num_rows == 1) {
