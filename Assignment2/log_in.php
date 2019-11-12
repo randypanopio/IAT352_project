@@ -32,8 +32,8 @@
 
             </div>
             <div class="col-md-6 content-row">
-              <form action="creator_member_authenticate.php">
-                <button class="btn btn-default btn-sm btn-anim-i" href="creator_member_authenticate.php">
+              <form action="photographers_authenticate.php">
+                <button class="btn btn-default btn-sm btn-anim-i" href="photographers_authenticate.php">
                   <span>
                     Photographer Sign In
                   </span>

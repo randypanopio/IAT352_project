@@ -20,14 +20,18 @@
     </div>
   </div>
 </section>
-<!-- TODO replace all "creators" context to "photographers" -->
+<!-- TODO
+- replace all "creators" context to "photographers"
+- create AJAX favourites list of each searched item
+- create saved list page
+ -->
 <!-- content -->
 <section id="projects" class="content-section text-center">
   <div class="container">
     <div class="row">
       <div class="col-md-12 content-row map-card">
         <div class="hovereffect">
-          <a href="content_creators_members.php">
+          <a href="database_list.php">
                 <img class="img-responsive" src="img/samplemap.jpg" alt="">
               </a>
           <a href="database_list.php">
@@ -41,10 +45,10 @@
     <div class="row">
       <div class="col-md-4 content-row">
         <div class="hovereffect">
-          <a href="content_creators_members.php">
+          <a href="photographer_members.php">
                 <img class="img-responsive" src="img/placeholder.png" alt="">
               </a>
-          <a href="content_creators_members.php">
+          <a href="photographer_members.php">
             <div class="overlay">
               <h2>View Photographer Members</h2>
 

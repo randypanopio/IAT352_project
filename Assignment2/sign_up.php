@@ -24,8 +24,8 @@
 
             </div>
             <div class="col-md-6 content-row">
-              <form action="creator_signup.php">
-                <button class="btn btn-default btn-sm btn-anim-i" href="creator_signup.php">
+              <form action="photographer_signup.php">
+                <button class="btn btn-default btn-sm btn-anim-i" href="photographer_signup.php">
                   <span>
                     Photographer Sign Up
                   </span>

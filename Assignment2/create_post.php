@@ -26,9 +26,9 @@ if (isset($_SESSION['valid_follower']) || isset($_SESSION['valid_creator']) ) {
   // // execute database query
   if ($stmt->execute()) {
       $stmt->close();
-      header("Location: creator_userinfo.php?id=".$user_id);
+      header("Location: photographers_userinfo.php?id=".$user_id);
   } else {
-    header("Location: creator_userinfo.php?id=".$user_id);
+    header("Location: photographers_userinfo.php?id=".$user_id);
   }
 
 

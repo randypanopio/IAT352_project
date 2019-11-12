@@ -26,7 +26,7 @@ if (isset($_SESSION['valid_creator'])) {
         exit;
 }
 
-if (!isset($_SESSION['valid_follower'])) {
+if (!isset($_SESSION['valid_creator'])) {
 
     // if the form was submitted
     if(isset($_POST['submit'])) {
@@ -49,20 +49,20 @@ if (!isset($_SESSION['valid_follower'])) {
 
 
         // Perform database query
-        $query = "SELECT * FROM followers WHERE `username`=\"".$username."\" AND `password`=\"".$password."\";";
+        $query = "SELECT * FROM creators WHERE `username`=\"".$username."\" AND `password`=\"".$password."\";";
         // check for results
         $result = $db->query($query);
         if($result->num_rows == 1){
-          $_SESSION['valid_follower'] = $_POST['username'];
+          $_SESSION['valid_creator'] = $_POST['username'];
           echo "logged in succesfully";
         } else {
-           echo "<div id=\"content-container\">
-           <div class=\"container\">
-           <div class=\"col-lg-12 mx-auto\">
-           <h2>Invalid login info, please try again</h2>
-           </div>
-           </div>
-           </div>";
+          echo "<div id=\"content-container\">
+          <div class=\"container\">
+          <div class=\"col-lg-12 mx-auto\">
+          <h2>Invalid login info, please try again</h2>
+          </div>
+          </div>
+          </div>";
         }
 
         if ($db->connect_error)  {
@@ -75,7 +75,7 @@ if (!isset($_SESSION['valid_follower'])) {
     }
 }
 
-if (isset($_SESSION['valid_follower'])) {
+if (isset($_SESSION['valid_creator'])) {
     //autheticated correctly
     if (isset($_SESSION['callback_URL'])) {
         // redirect to index TODO redirect to current page
@@ -83,13 +83,13 @@ if (isset($_SESSION['valid_follower'])) {
         header('Location:index.php');
         exit();
     } else {
-        echo "<div id=\"content-container\">
-        <div class=\"container\">
-        <div class=\"col-lg-12 mx-auto\">
-        <h2>You are now logged in</h2>
-        </div>
-        </div>
-        </div>";
+      echo "<div id=\"content-container\">
+      <div class=\"container\">
+      <div class=\"col-lg-12 mx-auto\">
+      <h2>You are now logged in</h2>
+      </div>
+      </div>
+      </div>";
     }
 } else {
     //did not authenticate yet or failed previous attempt
@@ -101,8 +101,8 @@ if (isset($_SESSION['valid_follower'])) {
             <section id="contact" class="contact-section content-section text-center">
               <div class="container">
                 <div class="col-lg-10 mx-auto">
-                  <form class="form-wrap validate-form mx-auto" name="input" action="follower_member_authenticate.php" method="post">
-                      <h2>Follower Sign In</h2>
+                  <form class="form-wrap validate-form mx-auto" name="input" action="photographers_authenticate.php" method="post">
+                      <h2>Content Photographer Sign In</h2>
 
                       <div class="input-wrap validate-input" data-validate="Username is needed!">
                         <input class="input-style" type="username" name="username" id="usernameInput" required>
@@ -122,7 +122,7 @@ if (isset($_SESSION['valid_follower'])) {
                         </button>
                       </div>
                       <p>Don't have an account? <a href="sign_up.php">Sign up</a></p>
-                      <p>Not a follower? <a href="photographers_authenticate.php">Log in as a Photographer instead</a></p>
+                      <p>Not a content creators? <a href="follower_member_authenticate.php">Log in as a follower instead</a></p>
                   </form>
                 </div>
               </div>
