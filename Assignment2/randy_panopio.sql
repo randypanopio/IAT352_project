@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2019 at 10:05 PM
+-- Generation Time: Nov 12, 2019 at 03:18 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -27,36 +27,6 @@ USE `randy_panopio`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `creators`
---
-
-DROP TABLE IF EXISTS `creators`;
-CREATE TABLE IF NOT EXISTS `creators` (
-  `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `username` varchar(30) NOT NULL,
-  `email` varchar(30) NOT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  `name` varchar(50) DEFAULT NULL,
-  `genre` varchar(50) DEFAULT NULL,
-  `bio` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `creators`
---
-
-INSERT INTO `creators` (`id`, `username`, `email`, `password`, `name`, `genre`, `bio`) VALUES
-(1, 'user', 'user@user.user', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', 'user', 'Entertainment', 'user bio'),
-(2, 'Milly', 'milly@sfu.edu', '1fcb3f32555f68b483c07dd39450f772153b55a89faba95732b040ba34c2480d', 'Milly Rutherford', 'Educational', 'I talk about birds'),
-(3, 'sam', 'sam@sam.sam', 'e96e02d8e47f2a7c03be5117b3ed175c52aa30fb22028cf9c96f261563577605', 'sam', 'Educational', ''),
-(4, 'xQcOW', 'xqcOW@gg.com', '960f984285701c6d8dba5dc71c35c55c0397ff276b06423146dde88741ddf1af', 'Felix', 'Gaming', 'https://www.youtube.com/channel/UCmDTrq0LNgPodDOFZiSbsww'),
-(5, 'm0xyy', '5head@gg.ca', 'ba8d78f5334ea4cf66a9e9bbc16b220b7b2b9d49e2f4575dfa135b2a7a7fa299', '5Head', 'Gaming', 'smart'),
-(6, 'TheSushiDragon', 'green@screen.com', 'b6dc933311bc2357cc5fc636a4dbe41a01b7a33b583d043a7f870f3440697e27', 'Stefan Li', 'Entertainment', 'I do green screens');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `followers`
 --
 
@@ -67,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `followers` (
   `email` varchar(30) NOT NULL,
   `password` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `followers`
@@ -80,7 +50,8 @@ INSERT INTO `followers` (`id`, `username`, `email`, `password`) VALUES
 (4, 'MillyFan', 'loveheart@gmail.com', '376c6fd8cc8383666c293114e6a58b4e3e981e65a21455ef1551749d92b4b1a6'),
 (5, 'TestFollower', 'test@follower.account', '9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08'),
 (6, 'follower', 'f@f.f', '074cdde4132a64f0abe703cfd21858a21d525ae944a8c11ad975fada0ae5a7ff'),
-(7, '123', '132', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3');
+(7, '123', '132', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3'),
+(8, 'user2', 'eafkmae@afladf.ca', '6025d18fe48abd45168528f18a82e265dd98d421a7084aa09f61b341703901a3');
 
 -- --------------------------------------------------------
 
@@ -332,6 +303,39 @@ INSERT INTO `parks` (`ParkID`, `Name`, `Official`, `Advisories`, `SpecialFeature
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `photographers`
+--
+
+DROP TABLE IF EXISTS `photographers`;
+CREATE TABLE IF NOT EXISTS `photographers` (
+  `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `username` varchar(30) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `genre` varchar(50) DEFAULT NULL,
+  `bio` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `photographers`
+--
+
+INSERT INTO `photographers` (`id`, `username`, `email`, `password`, `name`, `genre`, `bio`) VALUES
+(1, 'JamesStar', 'james@jj.l', '119c9ae6f9ca741bd0a76f87fba0b22cab5413187afb2906aa2875c38e213603', 'James Ringo', 'Hobby', 'I do photos for fun'),
+(2, 'TestUser', 'test@test.test', '9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08', 'Test User', 'Hobby', 'Test account'),
+(3, 'iii1239', 'Ivy@iiii.casasf', '254ac4523be56a1a724c4cd50437cfe343f0b4403d1c5a4def8ee8ce3259b9ad', 'Ivy Damonte', 'Wedding', '<3 <3'),
+(4, 'Lamont', 'llllll@lllll.llll', '82349bb026a8979fcec70c3d55c5446484ba962414aaa23ad0a5952cb944c4a0', 'Lamont Brown Sr.', 'Event', 'woo'),
+(5, 'Paulo', 'pcd@gg.com', '3df82393af7bbb0948f1ba0486e1be0a8381879ef1de4d8f779bf369493b8a7e', 'Paulo Carlos', 'Other', 'I do videography and ux /ui stuffs '),
+(6, 'ttttt000', 'tim@asfasfsa.aaefe', 'c0d19e4483571ff07cb01a4d3f5484102d7f333c4cafa64a2821f55031ea6041', 'Tim Vena', 'Portrait', 'give me a smile '),
+(7, 'ih2t9ubign24', 'sleinfoi2o@skbmslimb.casfe3', 'fca99bb269970fb188b7c95626ca39fa93be12a33d1ea65ce86af99825953440', 'Igna Pheonix', 'Architecture', 'soienoubno48hg0h20gnlsdivguh94p28,gbh'),
+(8, 'Randy', 'randyp@g.ca', '7b84b6afa7083b2c821adbce0a7f2d18e96b899dfef07c46c597fd58b189fdff', 'Randy Pano', 'Hobby', 'I just take photos'),
+(9, 'Godphotos', 'god@gg.gg', '5a2779466c78dc1848853d9bf3b65c894787d61ba1332ef5cff3e892744c6dc6', 'Grant Godli', 'Stock', 'everyone knows my work');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `posts`
 --
 
@@ -355,7 +359,9 @@ INSERT INTO `posts` (`user_id`, `title`, `content`, `date`) VALUES
 (1, 'I wrote a blog post here once', 'but i forgot', '2019-10-12 05:13:29'),
 (1, 'TOBE', 'Article evident arrived express highest men did boy. Mistress sensible entirely am so. Quick can manor smart money hopes worth too. Comfort produce husband boy her had hearing. Law others theirs passed but wishes. You day real less till dear read. Considered use dispatched melancholy sympathize discretion led. Oh feel if up to till like. \r\n', '2019-10-12 05:13:51'),
 (3, 'W H OMEGALUL', 'ashwoods see frankness objection abilities the. As hastened oh produced prospect formerly up am. Placing forming nay looking old married few has. Margaret disposed add screened rendered six say his striking confined. ', '2019-10-12 05:14:16'),
-(3, 'WOW', 'ashwoods see frankness objection abilities the. As hastened oh produced prospect formerly up am. Placing forming nay looking old married few has. Margaret disposed add screened rendered six say his striking confined.  ashwoods see frankness objection abilities the. As hastened oh produced prospect formerly up am. Placing forming nay looking old married few has. Margaret disposed add screened rendered six say his striking confined. ', '2019-10-12 05:14:23');
+(3, 'WOW', 'ashwoods see frankness objection abilities the. As hastened oh produced prospect formerly up am. Placing forming nay looking old married few has. Margaret disposed add screened rendered six say his striking confined.  ashwoods see frankness objection abilities the. As hastened oh produced prospect formerly up am. Placing forming nay looking old married few has. Margaret disposed add screened rendered six say his striking confined. ', '2019-10-12 05:14:23'),
+(2, 'redesign test', 'does this work', '2019-11-12 01:53:44'),
+(2, 'again', 'agin', '2019-11-12 01:58:27');
 
 -- --------------------------------------------------------
 
