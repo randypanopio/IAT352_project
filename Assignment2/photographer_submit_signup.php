@@ -2,7 +2,7 @@
     require_once("directives/database_info.php");
 
     // Prepared statement
-    if (!($stmt = $db->prepare("INSERT INTO  `creators`(`username`, `email`, `password`, `name`, `genre`, `bio`)
+    if (!($stmt = $db->prepare("INSERT INTO  `photographers`(`username`, `email`, `password`, `name`, `genre`, `bio`)
         VALUES (?, ?, ?, ?, ?, ?)"))) {
         echo "Prepare failed: (" . $db->errno . ") " . $db->error;
     }

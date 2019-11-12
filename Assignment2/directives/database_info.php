@@ -1,7 +1,7 @@
 <?php
 $dbhost = "localhost";
-$dbuser = "randy_panopio";
-$dbpass = "randy_panopio";
+$dbuser = "root";
+$dbpass = "";
 $dbname = "randy_panopio";
 
 // create new connection

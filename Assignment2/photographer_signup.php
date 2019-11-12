@@ -9,8 +9,8 @@
 <section id="contact" class="contact-section content-section text-center">
   <div class="container">
     <div class="col-lg-8 mx-auto">
-      <h2>Content Creator Sign Up</h2>
-      <form class="form-wrap validate-form mx-auto" name="input" action="creator_submit_signup.php" method="post">
+      <h2>Photographer Sign Up</h2>
+      <form class="form-wrap validate-form mx-auto" name="input" action="photographer_submit_signup.php" method="post">
 
         <div class="input-wrap validate-input" data-validate="Username is needed!">
           <input class="input-style" type="text" name="username" required>
@@ -35,17 +35,35 @@
         <div class="input-wrap validate-input" data-validate="Valid input is needed!">
           <select class="dropdown" name="genre">
             <option value="" disabled selected>GENRE</option>
-            <option value="Entertainment">
-              Entertainment
+            <option value="Hobby">
+              Hobby
             </option>
-            <option value="Gaming">
-              Gaming
+            <option value="Wedding">
+              Wedding
             </option>
-            <option value="Educational">
-              Educational
+            <option value="Event">
+              Event
             </option>
-            <option value="Music">
-              Music
+            <option value="Portrait">
+              Portrait
+            </option>
+            <option value="Product">
+              Product
+            </option>
+            <option value="Fashion/Design">
+              Fashion/Design
+            </option>
+            <option value="Architecture">
+              Architecture
+            </option>
+            <option value="Photojournalist">
+              Photojournalist
+            </option>
+            <option value="Stock">
+              Stock
+            </option>
+            <option value="Other">
+              Other
             </option>
           </select>
         </div>

@@ -1,14 +1,10 @@
 <!-- Top navigation bar -->
-<?php
-if($_SERVER["HTTPS"] != "on") {
-}
-?>
 <div id="main-menu-bar-container">
     <div id="main-menu-bar">
       <!-- Main navigation bar on all pages -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="index.php">MyStreams</a>
+      <a class="navbar-brand js-scroll-trigger" href="index.php">Viewfinder</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fas fa-bars"></i>
         </button>
@@ -31,7 +27,7 @@ if($_SERVER["HTTPS"] != "on") {
           }
 
           if (isset($_SESSION['valid_creator'])) {
-            $query = "SELECT `id`, `username` FROM `creators` WHERE username=\"".($_SESSION['valid_creator'])."\";";
+            $query = "SELECT `id`, `username` FROM `photographers` WHERE username=\"".($_SESSION['valid_creator'])."\";";
             $result = $db->query($query);
             if ($result) {
                 if ($result->num_rows == 1) {

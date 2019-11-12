@@ -11,7 +11,7 @@
     <div class="col-lg-8 mx-auto">
       <h2>Members Signup</h2>
         <div class="container-contact1-form-btn">
-          <p>If you would like to start following content creators, sign up with a followers account. If you are a content creators or would like to start building your own stream following, create a content creators account!</p>
+          <p>If you would like to start following photographers, sign up with a followers account. If you are a photographer or would like to start building your own portfolio, create a photographers account!</p>
           <div class="row">
             <div class="col-md-6 content-row">
               <form action="follower_signup.php">
@@ -24,10 +24,10 @@
 
             </div>
             <div class="col-md-6 content-row">
-              <form action="creator_signup.php">
-                <button class="btn btn-default btn-sm btn-anim-i" href="creator_signup.php">
+              <form action="photographer_signup.php">
+                <button class="btn btn-default btn-sm btn-anim-i" href="photographer_signup.php">
                   <span>
-                    Content Creator Sign Up
+                    Photographer Sign Up
                   </span>
                 </button>
               </form>

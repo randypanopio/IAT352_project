@@ -3,6 +3,23 @@
 /* css version of google import font */
 @import url('https://fonts.googleapis.com/css?family=Cabin:400,700|Lato:300,300i,400');
 
+// table stylesheet
+
+tr {
+  border-bottom: 0.5px solid #565656;
+}
+
+th, td {
+  padding: 4px;
+}
+
+.xlTable {
+  width: 100%;
+}
+
+.map-card {
+  height: 250px;
+}
 
 .profile-image {
   position: relative;

@@ -122,7 +122,7 @@ if (isset($_SESSION['valid_follower'])) {
                         </button>
                       </div>
                       <p>Don't have an account? <a href="sign_up.php">Sign up</a></p>
-                      <p>Not a content creators? <a href="creator_member_authenticate.php">Log in as a creator instead</a></p>
+                      <p>Not a follower? <a href="photographers_authenticate.php">Log in as a Photographer instead</a></p>
                   </form>
                 </div>
               </div>

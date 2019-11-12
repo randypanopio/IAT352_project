@@ -14,7 +14,7 @@ require("directives/database_info.php");?>
 
                 $userID = ($_GET['id']);
                 // $_COOKIE['viewed_profile_id'] = $userID;
-                $user_info_query = "SELECT * FROM `creators` WHERE id=".$userID.";";
+                $user_info_query = "SELECT * FROM `photographers` WHERE id=".$userID.";";
                 $user_result = $db->query($user_info_query);
                 if($user_result) {
                   $user = $user_result->fetch_array(MYSQLI_ASSOC);

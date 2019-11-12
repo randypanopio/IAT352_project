@@ -8,7 +8,7 @@ require("directives/database_info.php");?>
 <section id="contact" class="contact-section content-section text-center">
   <div class="container">
     <div class="col-lg-12 mx-auto">
-      <h2>List of Registered Content Creators</h2>
+      <h2>List of Registered Photographers</h2>
       <div class="row">
         <p>filter by </p>
         <form>
@@ -16,20 +16,35 @@ require("directives/database_info.php");?>
             <div class="input-wrap validate-input">
               <select onchange="this.form.submit()" class="dropdown" name="genre">
                 <option value="" disabled selected>Genre</option>
-                <option value="All">
-                  All
+                <option value="Hobby">
+                  Hobby
                 </option>
-                <option value="Entertainment">
-                  Entertainment
+                <option value="Wedding">
+                  Wedding
                 </option>
-                <option value="Gaming">
-                  Gaming
+                <option value="Event">
+                  Event
                 </option>
-                <option value="Educational">
-                  Educational
+                <option value="Portrait">
+                  Portrait
                 </option>
-                <option value="Music">
-                  Music
+                <option value="Product">
+                  Product
+                </option>
+                <option value="Fashion/Design">
+                  Fashion/Design
+                </option>
+                <option value="Architecture">
+                  Architecture
+                </option>
+                <option value="Photojournalist">
+                  Photojournalist
+                </option>
+                <option value="Stock">
+                  Stock
+                </option>
+                <option value="Other">
+                  Other
                 </option>
               </select>
             </div>
@@ -43,9 +58,9 @@ require("directives/database_info.php");?>
         if(isset($_GET["genre"])){
           $genre=$_GET["genre"];
           if($genre == "All" || $genre == "") {
-            $query = "SELECT * FROM `creators` ORDER BY `creators`.`id` ASC";
+            $query = "SELECT * FROM `photographers` ORDER BY `photographers`.`id` ASC";
           } else {
-            $query = "SELECT * FROM creators WHERE genre LIKE '%{$genre}%'";
+            $query = "SELECT * FROM photographers WHERE genre LIKE '%{$genre}%'";
           }
           $result = $db->query($query);
           if ($result = $db->query($query)) {
@@ -53,10 +68,10 @@ require("directives/database_info.php");?>
             while ($user = $result->fetch_assoc()) {
                 echo "<div class=\"col-md-3 content-row\">
                   <div class=\"hovereffect\">
-                    <a href=\"creator_userinfo.php?id=".$user['id']."\">
+                    <a href=\"photographers_userinfo.php?id=".$user['id']."\">
                           <img class=\"img-responsive\" src=\"img/placeholder.png\" alt=\"img\">
                         </a>
-                    <a href=\"creator_userinfo.php?id=".$user['id']."\">
+                    <a href=\"photographers_userinfo.php?id=".$user['id']."\">
                       <div class=\"overlay\">
                         <h2>".$user['username']."</h2>
                       </div>
@@ -78,17 +93,17 @@ require("directives/database_info.php");?>
               </div>";
             }
         } else {
-          $query = "SELECT * FROM `creators` ORDER BY `creators`.`id` ASC";
+          $query = "SELECT * FROM `photographers` ORDER BY `photographers`.`id` ASC";
           $result = $db->query($query);
             if ($result = $db->query($query)) {
                 /* fetch associative array */
                 while ($user = $result->fetch_assoc()) {
                     echo "<div class=\"col-md-3 content-row\">
                       <div class=\"hovereffect\">
-                        <a href=\"creator_userinfo.php?id=".$user['id']."\">
+                        <a href=\"photographers_userinfo.php?id=".$user['id']."\">
                               <img class=\"img-responsive\" src=\"img/placeholder.png\" alt=\"img\">
                             </a>
-                        <a href=\"creator_userinfo.php?id=".$user['id']."\">
+                        <a href=\"photographers_userinfo.php?id=".$user['id']."\">
                           <div class=\"overlay\">
                             <h2>".$user['username']."</h2>
                           </div>

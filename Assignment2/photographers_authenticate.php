@@ -49,7 +49,7 @@ if (!isset($_SESSION['valid_creator'])) {
 
 
         // Perform database query
-        $query = "SELECT * FROM creators WHERE `username`=\"".$username."\" AND `password`=\"".$password."\";";
+        $query = "SELECT * FROM photographers WHERE `username`=\"".$username."\" AND `password`=\"".$password."\";";
         // check for results
         $result = $db->query($query);
         if($result->num_rows == 1){
@@ -101,8 +101,8 @@ if (isset($_SESSION['valid_creator'])) {
             <section id="contact" class="contact-section content-section text-center">
               <div class="container">
                 <div class="col-lg-10 mx-auto">
-                  <form class="form-wrap validate-form mx-auto" name="input" action="creator_member_authenticate.php" method="post">
-                      <h2>Content Creator Sign In</h2>
+                  <form class="form-wrap validate-form mx-auto" name="input" action="photographers_authenticate.php" method="post">
+                      <h2>Photographer Sign In</h2>
 
                       <div class="input-wrap validate-input" data-validate="Username is needed!">
                         <input class="input-style" type="username" name="username" id="usernameInput" required>
