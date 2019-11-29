@@ -19,7 +19,7 @@ function location_lookup(page_number) {
     "&" + "filter_choice=" + filter_choice +
     "&" + "pagination_limit=" + pagination_limit +
     "&" + "page_number=" + page_number;
-  console.log(data);
+  // console.log(data);
   xhr.open("POST", "database_list.php", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhr.send(data);
@@ -35,28 +35,44 @@ function location_lookup(page_number) {
 
         var rows;
         if(filter_choice == "parks"){
-          console.log("itisparks")
+          // console.log("itisparks")
           rows ="<tr><th>Park Name</th><th>Address</th><th>Website URL</th></tr>"
           for (i = 0; i < dataArray.length - 1; i++) {
             var itemArray = dataArray[i].split("%$%");
-            console.log(itemArray);
+            // console.log(itemArray);
             rows += "<tr>";
             itemArray.forEach(function(item) {
-              rows += "<td>" + item + "</td>";
+              console.log("iam an item: " + item)
+              var affix1 = "http://";
+              var affix2 = "https://";
+              var str = item.toString();
+              if(str.includes(affix2) || str.includes(affix1)){
+                  rows += "<td><a href='"+item+"' target='blank'>Link</a></td>";
+              } else {
+                  rows += "<td>" + item + "</td>";
+              }
             })
             rows += "</tr>";
           }
           rows += "</tr>"
         } else if (filter_choice == "public_arts") {
-          console.log("its arts")
-          rows ="<tr><th>Site Name</th><th>Address</th><th>Status</th><th>Website URL</th></tr>"
+          // console.log("its arts")
+          rows ="<tr><th>Site Name</th><th>Address</th><th>Status</th><th>Source URL</th></tr>"
           for (i = 0; i < dataArray.length - 1; i++) {
             var itemArray = dataArray[i].split("%$%");
-            console.log(itemArray);
+            // console.log(itemArray);
             rows += "<tr>";
             if(itemArray.length = 4){
               itemArray.forEach(function(item) {
-                rows += "<td>" + item + "</td>";
+                console.log("iam an item: " + item)
+                var affix1 = "http://";
+                var affix2 = "https://";
+                var str = item.toString();
+                if(str.includes(affix2) || str.includes(affix1)){
+                    rows += "<td><a href='"+item+"' target='blank'>Link</a></td>";
+                } else {
+                    rows += "<td>" + item + "</td>";
+                }
               })
             } else {
               for (k = 0; k < 3; k++){
@@ -78,7 +94,6 @@ function location_lookup(page_number) {
     var affix = "^^lp";
     var parsed_last_page = result_data.substr(result_data.lastIndexOf(affix) + affix.length);
     last_page = parsed_last_page;
-    console.log(parsed_last_page + "yoooo");
     var paginationCtrls = "";
     if (last_page != 1) {
       if (page_number > 1) {
