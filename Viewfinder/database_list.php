@@ -4,7 +4,11 @@ require("directives/database_info.php");
 
 $search_string = $_POST['search_string'];
 $filter_choice = $_POST['filter_choice'];
+$pagination_limit = $_POST['pagination_limit'];
+$page_number = $_POST['page_number'];
 if(strlen($search_string) > 0){
+
+
 
   // establish sql string to be queried
   $finalWhereString = "parks.Name=".'"'.$search_string.'"';
@@ -14,52 +18,57 @@ if(strlen($search_string) > 0){
   $whereString = "";
   if($filter_choice == "parks") {
     $whereString = "Name";
+    $selectCount = "ParkID";
   } else if ($filter_choice == "public_arts") {
     $whereString = "SiteName";
+    $selectCount = "RegistryID";
   }
-  $sql = "SELECT * FROM $fromString WHERE $whereString LIKE $toBe_searched_string"; // final sql statement
+
+  //retrive count for use of pagination
+  $countsql = "SELECT COUNT($selectCount) FROM $fromString WHERE $whereString LIKE $toBe_searched_string";
+  // echo $countsql;
+  $query = mysqli_query($db, $countsql);
+  $rows = mysqli_fetch_row($query);
+  $total_rows = $rows[0];
+  // echo $total_rows;
+
+  $last_page = ceil($total_rows/$pagination_limit);
+  if($last_page < 1) {
+    $last_page = 1;
+  }
+  $limit = 'LIMIT ' .($page_number - 1) * $pagination_limit .',' .$pagination_limit;
+  // echo $last_page;
+
+  $sql = "SELECT * FROM $fromString WHERE $whereString LIKE $toBe_searched_string $limit"; // final sql statement
   // echo "SQL STMT: ".$sql."<br /><br /><br />";
 
   //query result
   if ($result = $db->query($sql)) {
+    $dataString = "";
+
     if($filter_choice == "parks") { // show parks list
-      echo "<table class=\"xlTable\"><tr>";
-      echo "<th>Park Name</th>";
-      echo "<th>Address</th>";
-      echo "<th>Website URL</th>";
-      echo "</tr>";
+      // $dataString = "parks|";
       while ($data = $result->fetch_assoc()){
-        echo "<tr>";
-        echo "<td>".$data['Name']."</td>";
-        echo "<td>".$data['StreetNumber']." ".$data['StreetName']." ".$data['EWStreet']." ".$data['NSStreet']." ".$data['NeighbourhoodName']."</td>";
-        echo "<td><a href=\"".$data['NeighbourhoodURL']."\"  target=\"_blank\">Link</a></td>";
-        echo "</tr>";
+        $name = $data['Name'];
+        $address = $data['StreetNumber']." ".$data['StreetName']." ".$data['EWStreet']." ".$data['NSStreet']." ".$data['NeighbourhoodName'];
+        $url = $data['NeighbourhoodURL'];
+        $dataString .= $name.'%$%'.$address.'%$%'.$url.'|%$%|';
       }
+      echo $dataString;
     } else if ($filter_choice == "public_arts") { //show the public arts list
-      echo "<table class=\"xlTable\"><tr>";
-      echo "<th>Site Name</th>";
-      echo "<th>Address</th>";
-      echo "<th>Status</th>";
-      echo "<th>Website URL</th>";
-      // echo "<th>Image URL</th>";
-      echo "</tr>";
       while ($data = $result->fetch_assoc()){
-        // if(!is_null($data.['SiteName'])){ //display only labeled sites
-          echo "<tr>";
-          echo "<td>".$data['SiteName']."</td>";
-          echo "<td>".$data['SiteAddress']."</td>";
-          echo "<td>".$data['Status']."</td>";
-          echo "<td><a href=\"".$data['URL']."\"  target=\"_blank\">Link</a></td>";
-          // echo "<td><a href=\"".$data['PhotoURL']."\"  target=\"_blank\">Link</a></td>";
-          echo "</tr>";
-        // }
+        $name = $data['SiteName'];
+        $address = $data['SiteAddress'];
+        $status = $data['Status'];
+        $url = $data['PhotoURL'];
+        $dataString .= $name.'%$%'.$address.'%$%'.$status.'%$%'.$url.'|%$%|';
       }
+      echo $dataString;
     }
-    echo "</table>";
-  } else {
-    echo "<h2>Failed to fetch result</h2><br />";
+
   }
+  echo "^^lp".$last_page;
 } else {
-  echo "<p></p>";
+  echo "";
 }
 ?>

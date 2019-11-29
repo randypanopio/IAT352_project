@@ -23,12 +23,23 @@ require("directives/database_info.php");?>
                 }?>>Art</option>
               </select>
               <input  id="search_string" type="text" name="search_string" value="<?php echo isset($_POST['search_string']) ? $_POST['search_string'] : '' ?>" >
-              <button onclick="location_lookup()" type="submit"  name="submit" value="submit">Search</button>
+              <button onclick="location_lookup(1)" type="submit"  name="submit" value="submit">Search</button>
           </p>
         </div>
       </div>
-      <div id="locations">
-
+      <div class="row" >
+        <table class="xlTable" id="locations"></table>
+      </div>
+      <div class="row">
+          <div>
+            Display
+            <select onchange="location_lookup(1);" onfocus="this.selectedIndex = -1;" name="pagination_limit" id="pagination_limit">
+              <option value="5">5</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+          <div style="margin-left: 10px;" id="pagination_control">
+          </div>
       </div>
       </div>
     </div>
