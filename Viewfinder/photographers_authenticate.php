@@ -51,9 +51,11 @@ if (!isset($_SESSION['valid_creator'])) {
         // Perform database query
         $query = "SELECT * FROM photographers WHERE `username`=\"".$username."\" AND `password`=\"".$password."\";";
         // check for results
-        $result = $db->query($query);
-        if($result->num_rows == 1){
+        if ($result = $db->query($query)) {
           $_SESSION['valid_creator'] = $_POST['username'];
+          while ($data = $result->fetch_assoc()){
+            $_SESSION['logID'] = $data['id'];
+          }
           echo "logged in succesfully";
         } else {
           echo "<div id=\"content-container\">
@@ -78,7 +80,6 @@ if (!isset($_SESSION['valid_creator'])) {
 if (isset($_SESSION['valid_creator'])) {
     //autheticated correctly
     if (isset($_SESSION['callback_URL'])) {
-        // redirect to index TODO redirect to current page
         unset($_SESSION['callback_URL']);
         header('Location:index.php');
         exit();
