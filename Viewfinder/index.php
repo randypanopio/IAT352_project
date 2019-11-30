@@ -31,10 +31,10 @@
     <div class="row">
       <div class="col-md-12 content-row map-card">
         <div class="hovereffect">
-          <a href="database_list.php">
+          <a href="search_locations.php">
                 <img class="img-responsive" src="img/samplemap.jpg" alt="">
               </a>
-          <a href="database_list.php">
+          <a href="search_locations.php">
             <div class="overlay">
               <h2>Search Locations</h2>
             </div>

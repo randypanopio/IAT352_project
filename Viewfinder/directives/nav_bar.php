@@ -33,7 +33,7 @@
                 if ($result->num_rows == 1) {
                     $user = $result->fetch_array(MYSQLI_ASSOC);
                     echo "<li class=\"nav-item\">
-                      <a class=\"nav-link js-scroll-trigger\">Welcome ".$user['username']."</a>
+                      <a href=\"personal_profile_page.php?id=".$user['id']."\" class=\"nav-link js-scroll-trigger\">Welcome ".$user['username']."</a>
                     </li>";
                     echo "
                     <li class=\"nav-item\">
