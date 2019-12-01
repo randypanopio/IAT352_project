@@ -46,11 +46,28 @@ function reloadSuggestions(){
 // func to load Upload
 function openUpload() {
      document.getElementById("hidden-content").style.visibility = "visible";
-     document.getElementById("upload-content").innerHTML='<object type="text/html" data="upload.html" ></object>';
+     document.getElementById("upload-screen").style.display = "flex";
+     // document.getElementById("upload-content").innerHTML='<object type="text/html" data="upload.html" ></object>';
 }
 
 function closeUpload() {
      document.getElementById("hidden-content").style.visibility = "hidden";
+     document.getElementById("upload-screen").style.display = "none";
+     document.getElementById("upload-review-screen").style.display = "none";
+     document.getElementById("upload-success-screen").style.display = "none";
+}
+
+function loadReviewScreen() {
+    document.getElementById("upload-review-screen").style.display = "flex";
+    document.getElementById("upload-screen").style.display = "none";
+}
+
+function loadSuccessScreen() {
+  document.getElementById("upload-success-screen").style.display = "flex";
+  document.getElementById("upload-review-screen").style.display = "none";
+  setTimeout(function() {
+    closeUpload();
+  }, 1000)
 }
 
 //not working

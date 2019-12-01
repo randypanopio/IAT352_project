@@ -12,10 +12,16 @@
   width: 100vw;
   height: 100%;
   z-index: 1031;
+  .overlay-screen{
+    display: none;
+  }
 }
 
 #hidden-content {
   position: fixed;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   .upload-content, object {
     width: 100vw;
     height: 100%;
@@ -23,7 +29,26 @@
 
 }
 
-//
+.dropzone {
+  width: 80%;
+  height: 80%;
+  background-color: #ccc;
+  border-radius: 25px;
+}
+
+.upload-dropzone-container {
+  z-index: 1040;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background-color: white;
+  width: 40%;
+  border-radius: 25px;
+  height: 25vw;
+}
+
+
+// upload
 
 .close-upload-btn {
   width: 40px;
