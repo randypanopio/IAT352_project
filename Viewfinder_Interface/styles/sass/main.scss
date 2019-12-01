@@ -21,6 +21,14 @@
 
 //profile dropdown
 
+.dropbtn{
+  border: 1px solid #333;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+}
+
 .dropdown {
   float: right;
   position: relative;
@@ -78,16 +86,21 @@
 
 // suggestions bar
 .suggestions-container {
+  display: flex;
   max-width: 60%;
   margin-left: 100px;
   padding: 0 15px;
+  button {
+    display: flex;
+  }
 }
 
 .suggestion{
   background: white;
   border-radius: 15px;
   padding: 0 15px;
-  width: 100%;
+  margin:0 20px;
+  display: flex;
   border: 1px solid #888;
   height: 30px;
 }
@@ -101,6 +114,10 @@
 }
 
 //sidebar
+.sidebar-container {
+  padding: 5px 15px;
+}
+
 .sidebar {
   height: 100%;
   margin-top: 80px;
@@ -109,7 +126,7 @@
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: white;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -118,14 +135,13 @@
 .sidebar a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
-  color: #818181;
+  color: #333;
   display: block;
   transition: 0.3s;
 }
 
 .sidebar a:hover {
-  color: #f1f1f1;
+  color: #777;
 }
 
 .sidebar .closebtn {
@@ -214,6 +230,9 @@ th, td {
   height: 80px;
   max-height: 80px;
   background-color: white !important;
+  -webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75);
 }
 
 .test{
@@ -241,7 +260,7 @@ li{
 img{
   max-width: 100%;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 
@@ -284,7 +303,7 @@ p {
   text-align: center;
   cursor: default;
   background-color: #333333;
-  border-radius: 10px;
+  border-radius: 7px;
 }
 
 .hovereffect .overlay {
