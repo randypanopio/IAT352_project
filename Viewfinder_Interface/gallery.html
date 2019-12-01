@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Viewfinder</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Randy Panopio">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/css/main.css" />
+</head>
+
+<body>
+
+  <!-- Top navigation bar -->
+  <!-- Top navigation bar -->
+  <div id="main-menu-bar-container">
+    <div id="main-menu-bar">
+      <!-- Main navigation bar on all pages -->
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container navbar-subcontainer">
+          <a class="navbar-brand" href="index.html">[ Viewfinder ]</a>
+          <!-- search bar -->
+          <div>
+            <input />
+            <button>search</button>
+          </div>
+          <!-- search suggestions -->
+          <div class="suggestions-container">
+            <button class="suggestion">
+                  Industrial <span class="plusbtn">+</span>
+            </button>
+            <button class="suggestion">
+                  Architecture <span class="plusbtn">+</span>
+            </button>
+            <button class="suggestion">
+                  Post-Modern <span class="plusbtn">+</span>
+            </button>
+            <button class="suggestion">
+                  Underground <span class="plusbtn">+</span>
+            </button>
+          </div>
+
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <div class="dropdown">
+                  <button onclick="profileDropdown()" class="dropbtn nav-link js-scroll-trigger nav-link-button">Profile</button>
+                  <div id="myDropdown" class="dropdown-content">
+                    <a href="profile.html">View Profile</a>
+                    <a href="index.html#logout">Logout</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div id="content-container">
+  <!-- content -->
+  <section id="projects" class="content-section text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 content-row map-card">
+          <div class="hovereffect">
+            <img class="img-responsive" src="img/samplemap.jpg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 content-row">
+          <div class="hovereffect">
+            <img class="img-responsive" src="img/cam2.png" alt="">
+          </div>
+        </div>
+        <div class="col-md-4 content-row">
+          <div class="hovereffect">
+            <img class="img-responsive" src="img/cam1.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 content-row">
+          <div class="hovereffect">
+            <img class="img-responsive" src="img/samplemap.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-md-4 content-row">
+          <div class="hovereffect">
+            <img class="img-responsive" src="img/cam1.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="hidden-content">
+
+      </div>
+  </section>
+
+  <a class="bottom-right-buttons right-one" onclick="openUpload()">Upload</a>
+  <a class="bottom-right-buttons right-two" href="index.html">Map</a>
+  </div>
+
+
+
+      <!-- Footer -->
+    <footer>
+      <div class="container text-center ">
+        <div class="site-footer-links">
+          <div class="row">
+          </div>
+          <div class="copyright">&copy; 2019 Viewfinder<span>&bull;  </span><a class="copyright-link" href="https://github.com/randypanopio/Viewfinder">Repo</a></div>
+        </div>
+      </div>
+    </footer>
+
+
+
+    <!-- my scripts -->
+    <script src="js/interaction.js"></script>
+    <!-- vendor scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

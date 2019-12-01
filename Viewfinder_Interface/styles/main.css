@@ -1,0 +1,871 @@
+/* css version of google import font */
+@import url("https://fonts.googleapis.com/css?family=Cabin:400,700|Lato:300,300i,400");
+/* line 6, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.filter-dropdown {
+  float: right;
+  width: 100px;
+}
+
+/* line 11, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.dropdown {
+  font-family: 'Lato';
+  font-weight: 300;
+  width: 100%;
+  border-radius: 5px;
+  padding: 3px;
+  margin-bottom: 5px;
+  border-color: transparent;
+  text-align-last: center;
+  text-align: center;
+  -ms-text-align-last: center;
+  -moz-text-align-last: center;
+  color: #555555;
+}
+
+/* line 24, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.dropdown option {
+  padding: 5px;
+}
+
+/* line 29, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.content-box {
+  margin-top: 80px;
+  padding: 20px;
+}
+
+/* line 34, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.navbar {
+  background-color: white !important;
+}
+
+/* line 38, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.test {
+  border: 2px solid green;
+}
+
+/* line 42, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+body {
+  font-family: 'Lato';
+  font-weight: 300;
+  width: 100%;
+  height: 100%;
+  color: #333333;
+  background-color: white;
+}
+
+/* line 51, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+html {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 56, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+li {
+  list-style: none;
+}
+
+/* line 60, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+img {
+  max-width: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* line 67, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Cabin', sans-serif;
+  font-weight: 700;
+  margin: 0 0 35px;
+  letter-spacing: 1px;
+}
+
+/* line 80, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+h1 {
+  text-transform: uppercase;
+}
+
+/* line 83, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 0 25px;
+}
+
+/* line 89, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.content-image p {
+  text-align: center;
+  font-style: italic;
+}
+
+/* hover animation */
+/* line 97, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.hovereffect {
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+  background-color: #333333;
+  border-radius: 10px;
+}
+
+/* line 109, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.hovereffect .overlay {
+  position: absolute;
+  overflow: hidden;
+  width: 90%;
+  height: 100%;
+  left: 5%;
+  top: 5%;
+}
+
+/* line 118, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.hovereffect:hover .overlay {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+/* line 126, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.overlay h2 {
+  margin-bottom: 15px !important;
+}
+
+/* line 130, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.hovereffect img {
+  display: block;
+  position: relative;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+/* line 137, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.hovereffect:hover img {
+  opacity: 0.7;
+  /* brightness doesn't work on IE, work around is use opacity */
+  /* filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' ><filter id='bright30'><feComponentTransfer><feFuncR type='linear' slope='0.30'/><feFuncG type='linear' slope='0.30' /><feFuncB type='linear' slope='0.30' /></feComponentTransfer></filter></svg>#bright30"); */
+  /* filter: brightness(0.6); */
+  /* -webkit-filter: brightness(0.6); */
+  /* -moz-filter: brightness(0.6); */
+  /* -o-filter: brightness(0.6); */
+}
+
+/* line 149, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.hovereffect h2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 17px;
+  overflow: hidden;
+  padding: 0.5em 0;
+  background-color: transparent;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0, -35%, 0);
+  transform: translate3d(0, -35%, 0);
+}
+
+/* line 168, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.hovereffect p {
+  color: #FFF;
+  padding: 1em 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+}
+
+/* line 179, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.hovereffect:hover p, .hovereffect:hover h2 {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* hover end  */
+/* adds space to bottom of content */
+/* line 191, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.content-row {
+  margin-bottom: 3%;
+}
+
+/* line 195, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.profile-pic {
+  margin-bottom: 2%;
+}
+
+/* line 199, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.profile-pic img {
+  width: 50%;
+}
+
+/* line 203, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 10em;
+  /* background-color: #f5f5f5; */
+  text-align: center;
+}
+
+/* line 215, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.site-footer-links {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #777;
+  padding-top: 20px;
+  display: block;
+  text-align: center;
+  margin: 0;
+  list-style: none;
+}
+
+/* line 226, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.site-footer-links span {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* line 231, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.copyright a {
+  font-size: 14px;
+  color: #666;
+}
+
+/* line 236, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.copyright a:hover {
+  box-shadow: inset 0 -1px 0 #999;
+  transition: 0.3s ease-in-out;
+}
+
+/* old expanding animation */
+/* line 244, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+ul.social {
+  list-style-type: none;
+  text-align: center;
+  padding-bottom: 15px;
+  margin-left: -3%;
+}
+
+/* line 251, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+ul.social li {
+  font-size: 2.5em;
+  display: inline;
+  padding: 0 1%;
+}
+
+/* line 257, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+#styled-red {
+  color: #952d49;
+}
+
+/* aligns text left */
+/* line 264, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.radio-content p, .radio-content ul, .radio-content h5 {
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  /* line 271, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0 0 35px;
+  }
+}
+
+/* line 280, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+a {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: #952d49;
+}
+
+/* line 287, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+a:focus, a:hover {
+  text-decoration: none;
+  color: #333333;
+}
+
+/* line 292, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+#mainNav {
+  font-family: 'Cabin', sans-serif;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: white;
+}
+
+/* line 300, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+#mainNav .navbar-toggler {
+  font-size: 14px;
+  padding: 11px;
+  color: #333333;
+  border: 1px solid #333333;
+}
+
+/* line 307, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+#mainNav .navbar-brand {
+  font-weight: 700;
+}
+
+/* line 311, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+#mainNav a {
+  color: #333333;
+}
+
+/* line 315, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+#mainNav .navbar-nav .nav-item {
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+}
+
+/* line 321, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+#mainNav .navbar-nav {
+  /* not woroking? */
+  /* color: fade(white, 80%); */
+  outline: none;
+  background-color: transparent;
+}
+
+/* line 328, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+#mainNav .navbar-nav .nav-item:active, #mainNav .navbar-nav .nav-item:focus {
+  outline: none;
+  background-color: transparent;
+}
+
+@media (min-width: 992px) {
+  /* line 335, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+  #mainNav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    -webkit-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
+    -moz-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
+    transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
+    letter-spacing: 1px;
+    border-bottom: none;
+    background: transparent;
+  }
+  /* line 345, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+  #mainNav.navbar-shrink {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    background: white;
+  }
+  /* line 351, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+  #mainNav .nav-link.active {
+    outline: none;
+    box-shadow: inset 0 -6px 0 #952d49;
+  }
+  /* line 355, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+  #mainNav .nav-link.active:hover {
+    /* color: white; */
+  }
+  /* line 359, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+  #mainNav a:hover {
+    box-shadow: inset 0 -6px 0 #952d49;
+    transition: 0.3s ease-in-out;
+  }
+}
+
+/* line 365, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.masthead {
+  display: table;
+  width: 100%;
+  height: auto;
+  padding: 200px 0;
+  text-align: center;
+  color: white;
+  background: url("../img/intro-bg.jpg") no-repeat bottom center scroll;
+  background-color: #333333;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 380, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.masthead-panradio {
+  display: table;
+  width: 100%;
+  height: auto;
+  padding: 200px 0;
+  text-align: center;
+  color: white;
+  background: url("../img/pan-bg.png") no-repeat bottom center scroll;
+  background-color: #333333;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 396, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.masthead-lookbook {
+  display: table;
+  width: 100%;
+  height: auto;
+  padding: 200px 0;
+  color: white;
+  background: url("../img/lookbookhero.jpg") no-repeat bottom center scroll;
+  background-color: #333333;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 412, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.masthead-lookbook h1 {
+  font-family: 'Lato';
+  font-weight: 300;
+  text-align: justify;
+}
+
+/* line 418, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.masthead-lookbook p {
+  font-family: 'Lato';
+  font-weight: 300;
+  text-align: justify;
+}
+
+/* line 424, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.masthead-gallium {
+  display: table;
+  width: 100%;
+  height: auto;
+  padding: 200px 0;
+  text-align: center;
+  color: white;
+  background: url("../img/gallium.png") no-repeat bottom center scroll;
+  background-color: #333333;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 439, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.masthead-visual {
+  display: table;
+  width: 100%;
+  height: auto;
+  padding: 200px 0;
+  text-align: center;
+  color: white;
+  background: url("../img/intro-bg.jpg") no-repeat bottom center scroll;
+  background-color: #333333;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 454, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.masthead .intro-body {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* line 459, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.masthead .intro-body .brand-heading {
+  font-size: 50px;
+}
+
+/* line 463, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.masthead .intro-body .intro-text {
+  font-size: 18px;
+}
+
+@media (min-width: 768px) {
+  /* line 468, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+  .masthead {
+    height: 100%;
+    padding: 0;
+  }
+  /* line 472, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+  .masthead .intro-body .brand-heading {
+    font-size: 100px;
+  }
+  /* line 475, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+  .masthead .intro-body .intro-text {
+    font-size: 22px;
+  }
+}
+
+/* line 480, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.btn-circle {
+  font-size: 26px;
+  width: 55px;
+  height: 55px;
+  margin-top: 15px;
+  line-height: 45px;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+  color: white;
+  border: 2px solid white;
+  border-radius: 100% !important;
+  background: transparent;
+}
+
+@media (max-width: 767px) {
+  /* line 496, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+  .btn-circle {
+    /* js might meddle need to add important */
+    display: none !important;
+  }
+}
+
+/* line 502, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.btn-circle:focus, .btn-circle:hover {
+  color: white;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* line 508, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.btn-bottom {
+  /* fix ie */
+  left: 50%;
+  right: 50%;
+  justify-content: center;
+  position: absolute;
+  margin-bottom: 2%;
+  bottom: 0;
+}
+
+/* line 518, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.btn-dl {
+  display: table;
+  width: 100%;
+}
+
+/* line 523, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.btn-black {
+  color: #333333;
+  border: 2px solid #333333;
+}
+
+/* line 530, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.content-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* line 535, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+#content-container {
+  margin-top: 80px;
+}
+
+/* line 539, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.about-section {
+  /* background-color: #6c6c6c; */
+  /* background: url("../img/about-bg.jpg") no-repeat center center scroll; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/*  button styling */
+/* line 551, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.btn {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  border-radius: 0;
+}
+
+/* line 562, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.btn-default {
+  color: #952d49;
+  border: 1px solid #952d49;
+  border-radius: 3px;
+  background-color: transparent;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+/* line 571, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.btn-default:focus, .btn-default:hover {
+  color: white;
+  border: 1px solid #952d49;
+  outline: none;
+  background-color: #952d49;
+}
+
+/* line 578, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.btn-anim-i {
+  padding-right: 19px;
+  padding-left: 19px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+/* line 584, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.btn-icon {
+  padding-right: 9px;
+  padding-left: 9px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+/* line 590, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.btn-icon i {
+  margin-left: 5px;
+}
+
+/* line 594, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.btn-anim-i i {
+  margin-left: 7px;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -moz-transition: all 0.5s;
+  transition: all 0.2s;
+}
+
+/* line 603, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.btn-anim-i:hover i {
+  -webkit-transform: translateX(10px);
+  -moz-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  -o-transform: translateX(10px);
+  transform: translateX(10px);
+}
+
+/* button for scolling up */
+/* line 613, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+#scroll-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  color: #555;
+  border-color: #555;
+}
+
+/* line 625, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+ul.banner-social-buttons {
+  margin-top: 0;
+}
+
+@media (max-width: 1199px) {
+  /* line 630, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+  ul.banner-social-buttons {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* line 636, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+  ul.banner-social-buttons li {
+    display: block;
+    margin-bottom: 20px;
+    padding: 0;
+  }
+  /* line 641, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+  ul.banner-social-buttons li:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* line 646, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+footer {
+  padding: 50px 0;
+}
+
+/* line 650, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+footer p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* line 655, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+::-moz-selection {
+  background: #333333;
+  background: rgba(149, 45, 73, 0.4);
+  text-shadow: none;
+}
+
+/* line 661, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+::selection {
+  background: #333333;
+  background: rgba(149, 45, 73, 0.4);
+  text-shadow: none;
+}
+
+/* line 667, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+img::selection {
+  background: transparent;
+}
+
+/* line 671, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+img::-moz-selection {
+  background: transparent;
+}
+
+/* line 675, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.process-image img {
+  max-width: 100%;
+}
+
+/* line 679, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.content-image img {
+  max-width: 100%;
+}
+
+/* contact form style */
+/* line 687, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.input-style input {
+  margin-left: 10px;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 20px;
+  border: 1px solid #333333;
+  background-color: #ffffff;
+}
+
+/* line 697, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.form-wrap {
+  width: 50%;
+}
+
+/* line 702, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.input-wrap {
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin-bottom: 40px;
+}
+
+/* line 709, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.input-style {
+  display: block;
+  width: 100%;
+  font-family: 'Lato';
+  font-weight: 300;
+  font-size: 15px;
+  color: #555555;
+  line-height: 1.2;
+}
+
+/* line 719, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.focus-input2 {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+/* line 729, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.focus-input2::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  background: #952d49;
+}
+
+/* line 747, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.focus-input2::after {
+  content: attr(data-placeholder);
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  font-size: 13px;
+  color: #999999;
+  line-height: 1.2;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+/*-- contact animation---*/
+/* line 766, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+input.input-style {
+  outline: none;
+  border: none;
+  height: 45px;
+}
+
+/* line 772, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+input.input-style + .focus-input2::after {
+  top: 16px;
+  left: 0;
+}
+
+/* line 777, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+textarea.input-style {
+  outline: none;
+  border: none;
+  min-height: 115px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+/* line 785, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+textarea.input-style + .focus-input2::after {
+  top: 16px;
+  left: 0;
+}
+
+/* line 790, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.input-style:focus + .focus-input2::after {
+  top: -13px;
+}
+
+/* line 794, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.input-style:focus + .focus-input2::before {
+  width: 100%;
+}
+
+/* line 798, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.has-val.input-style + .focus-input2::after {
+  top: -13px;
+}
+
+/* line 802, C:/xampp/htdocs/dev/352_project/IAT352_project/Assignment1/styles/sass/main.scss */
+.has-val.input-style + .focus-input2::before {
+  width: 100%;
+}
+
+/*# sourceMappingURL=main.css.map */

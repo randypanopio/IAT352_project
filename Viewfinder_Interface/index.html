@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Viewfinder</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Randy Panopio">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/css/main.css" />
+</head>
+
+<body>
+
+  <!-- Top navigation bar -->
+  <div id="main-menu-bar-container">
+    <div id="main-menu-bar">
+      <!-- Main navigation bar on all pages -->
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container navbar-subcontainer">
+          <a class="navbar-brand" href="index.html">[ Viewfinder ]</a>
+          <!-- search bar -->
+          <div>
+            <input />
+            <button>search</button>
+          </div>
+          <!-- search suggestions -->
+          <div class="suggestions-container">
+            <button class="suggestion">
+                  Industrial <span class="plusbtn">+</span>
+            </button>
+            <button class="suggestion">
+                  Architecture <span class="plusbtn">+</span>
+            </button>
+            <button class="suggestion">
+                  Post-Modern <span class="plusbtn">+</span>
+            </button>
+            <button class="suggestion">
+                  Underground <span class="plusbtn">+</span>
+            </button>
+          </div>
+
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <div class="dropdown">
+                  <button onclick="profileDropdown()" class="dropbtn nav-link js-scroll-trigger nav-link-button">Profile</button>
+                  <div id="myDropdown" class="dropdown-content">
+                    <a href="profile.html">View Profile</a>
+                    <a href="index.html#logout">Logout</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+
+
+
+    <div id="content-container">
+
+      <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">×</a>
+        <div class="sidebar-container">
+          <div>
+            Surrey Art Gallery
+          </div>
+          <div>
+            Directions
+            Save
+            Share
+          </div>
+          <div>
+            Location type
+          </div>
+          <div>
+            Hours
+          </div>
+          <div>
+            things to know
+          </div>
+          <div>
+            <div class="">
+                <img class="img-responsive" src="img/placeholder.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <section>
+        <div class="mapouter">
+          <div class="gmap_canvas"><iframe style="position:fixed; top:80px; left:0; bottom:0; right:0; width:100%; height: calc(100% - 80px);" id="gmap_canvas" style="height:100vw;width:100vw" src="https://maps.google.com/maps?q=Downtown%20Vancouver&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <a href="https://www.divi-discounts.com">estore elegant themes</a>
+          </div>
+          <style>
+            .mapouter {
+              position: relative;
+              text-align: right;
+              height: 100%;
+              width: 100%;
+            }
+
+            .gmap_canvas {
+              overflow: hidden;
+              background: none !important;
+              height: 100%;
+              width: 100%;
+            }
+          </style>
+        </div>
+      </section>
+
+      <button class="openbtn" style="position: absolute; top: 50%; left: 50%;" onclick="openSidebar()">Open Sidebar</button>
+      <button class="bottom-right-buttons right-one" onclick="openUpload()">Upload</button>
+      <a class="bottom-right-buttons right-two" href="gallery.html">Gallery</a>
+
+
+    </div>
+
+
+    <div id="hidden-content">
+      <button class="openbtn" style="position: absolute; top: 25%; left: 50%; width: 150px; height: 30px;" onclick="closeUpload()">clsoe uploadr</button>
+      <div id="upload-content">
+      </div>
+    </div>
+
+    <!-- my scripts -->
+    <script src="js/interaction.js"></script>
+    <!-- vendor scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
