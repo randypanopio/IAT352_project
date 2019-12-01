@@ -29,7 +29,19 @@ window.onclick = function(event) {
   }
 }
 
+var suggestionState = false;
+function reloadSuggestions(){
+  if(suggestionState){
+    document.getElementById("suggestions1").style.display = "flex";
+    document.getElementById("suggestions2").style.display = "none";
+  } else {
+    document.getElementById("suggestions1").style.display = "none";
+    document.getElementById("suggestions2").style.display = "flex";
+  }
 
+  suggestionState = !suggestionState;
+  console.log(suggestionState);
+}
 
 // func to load Upload
 function openUpload() {
@@ -41,10 +53,22 @@ function closeUpload() {
      document.getElementById("hidden-content").style.visibility = "hidden";
 }
 
+//not working
+// function function1(callback){
+//   document.getElementById("hidden-content").style.visibility = "hidden";
+// }
+//
+// //failsafe func
+// function reloadCurrentPage() {
+//   window.location.reload();
+//   function1(function() {
+//     closeUpload();
+//   });
+// }
+
 
 //suggestions funcs
 function loadSuggestion(suggestion){
   console.log("working: " + suggestion);
   document.getElementById("search-bar").value += " " + suggestion;
-
 }

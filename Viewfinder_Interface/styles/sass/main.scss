@@ -6,7 +6,7 @@
 //upload canvas
 #hidden-content {
   visibility: hidden;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100vw;
@@ -14,10 +14,24 @@
   z-index: 1031;
 }
 
-#hidden-content * {
-  width: 100vw;
-  height: 100%;
+#hidden-content {
+  position: fixed;
+  .upload-content, object {
+    width: 100vw;
+    height: 100%;
+  }
+
 }
+
+//
+
+.close-upload-btn {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+}
+
 
 //profile dropdown
 
@@ -68,7 +82,7 @@
 .bottom-right-buttons-container {
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   bottom: 4.5vw;
   right: 10px;
 }
@@ -138,10 +152,16 @@ form.search-bar::after {
 .suggestions-container {
   display: flex;
   max-width: 60%;
-  margin-left: 100px;
+  margin-left: 70px;
   padding: 0 15px;
-  button {
+  span {
     display: flex;
+    align-items: center;
+    align-content: center;
+    button {
+      display: flex;
+      align-items: center;
+    }
   }
 }
 
@@ -149,7 +169,7 @@ form.search-bar::after {
   background: white;
   border-radius: 15px;
   padding: 0 15px;
-  margin:0 20px;
+  margin:0 12px;
   display: flex;
   border: 1px solid #888;
   height: 30px;
@@ -221,17 +241,23 @@ form.search-bar::after {
   margin-left: 50px;
 }
 
+
 .openbtn {
-  position: absolute;
+  position: fixed;
   top: 50%;
-  left: 50%;
-  background-image: url('../img/marker.png');
+  left: 48%;
+  min-width: 50px;
+  // background-image: url('../../img/marker.png');
   background-color: transparent;
+  width: 3%;
   font-size: 74px;
   cursor: pointer;
   border: none;
   i {
     color: #e74c3c;
+  }
+  img {
+    width: 100%;
   }
 }
 
@@ -630,7 +656,7 @@ a:focus, a:hover {
   }
 
   #mainNav a:hover{
-    box-shadow: inset 0 -6px 0 #952d49;
+    // box-shadow: inset 0 -6px 0 #952d49;
     transition: 0.3s ease-in-out;
   }
 }

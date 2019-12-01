@@ -30,18 +30,39 @@
           </form>
           <!-- search suggestions -->
           <div class="suggestions-container">
-            <button onclick="loadSuggestion('Industrial')" class="suggestion">
-                  Industrial <span class="plusbtn"><i class="fa fa-plus" style="font-size: 12px;" aria-hidden="true"></i></span>
-            </button>
-            <button onclick="loadSuggestion('Architecture')" class="suggestion">
-                  Architecture <span class="plusbtn"><i class="fa fa-plus" style="font-size: 12px;" aria-hidden="true"></i></span>
-            </button>
-            <button onclick="loadSuggestion('Post-Modern')" class="suggestion">
-                  Post-Modern <span class="plusbtn"><i class="fa fa-plus" style="font-size: 12px;" aria-hidden="true"></i></span>
-            </button>
-            <button onclick="loadSuggestion('Underground')" class="suggestion">
-                  Underground <span class="plusbtn"><i class="fa fa-plus" style="font-size: 12px;" aria-hidden="true"></i></span>
-            </button>
+            <span id="suggestions1">
+              <button onclick="loadSuggestion('Industrial')" class="suggestion">
+                    Industrial <span class="plusbtn"><i class="fa fa-plus" style="font-size: 12px;" aria-hidden="true"></i></span>
+              </button>
+              <button onclick="loadSuggestion('Architecture')" class="suggestion">
+                    Architecture <span class="plusbtn"><i class="fa fa-plus" style="font-size: 12px;" aria-hidden="true"></i></span>
+              </button>
+              <button onclick="loadSuggestion('Post-Modern')" class="suggestion">
+                    Post-Modern <span class="plusbtn"><i class="fa fa-plus" style="font-size: 12px;" aria-hidden="true"></i></span>
+              </button>
+              <button onclick="loadSuggestion('Underground')" class="suggestion">
+                    Underground <span class="plusbtn"><i class="fa fa-plus" style="font-size: 12px;" aria-hidden="true"></i></span>
+              </button>
+            </span>
+            <span id="suggestions2" style="display:none;">
+              <button onclick="loadSuggestion('Parks')" class="suggestion">
+                    Parks <span class="plusbtn"><i class="fa fa-plus" style="font-size: 12px;" aria-hidden="true"></i></span>
+              </button>
+              <button onclick="loadSuggestion('Nature')" class="suggestion">
+                    Nature <span class="plusbtn"><i class="fa fa-plus" style="font-size: 12px;" aria-hidden="true"></i></span>
+              </button>
+              <button onclick="loadSuggestion('Wild')" class="suggestion">
+                    Wild <span class="plusbtn"><i class="fa fa-plus" style="font-size: 12px;" aria-hidden="true"></i></span>
+              </button>
+              <button onclick="loadSuggestion('Gardens')" class="suggestion">
+                    Gardens <span class="plusbtn"><i class="fa fa-plus" style="font-size: 12px;" aria-hidden="true"></i></span>
+              </button>
+            </span>
+
+            <span>
+              <button class="suggestion" style="border: none; font-size: 26px;" onclick="reloadSuggestions()"><i class="fa fa-undo" aria-hidden="true"></i></i></button>
+            </span>
+
           </div>
 
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -148,7 +169,7 @@
         </div>
       </section>
 
-      <button class="openbtn" onclick="openSidebar()"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
+      <button class="openbtn" onclick="openSidebar()"><img src="img/marker.png" /></button>
       <div class="bottom-right-buttons-container">
         <button class="bottom-right-buttons right-one" onclick="openUpload()"><i class="fa fa-upload" aria-hidden="true"></i></button>
         <button class="bottom-right-buttons right-two" onclick="window.location.href='./gallery.html'"><i class="fa fa-picture-o" aria-hidden="true"></i></button>
@@ -160,8 +181,8 @@
 
 
     <div id="hidden-content">
-      <button class="openbtn" style="position: absolute; top: 25%; left: 50%; width: 150px; height: 30px;" onclick="closeUpload()">close</button>
-      <div id="upload-content">
+      <button class="close-upload-btn" style="position: absolute; top: 25%; left: 50%; width: 40px; height: 40px;" onclick="closeUpload()"><i class="fa fa-times" aria-hidden="true"></i></button>
+      <div id="upload-content" class="upload-content">
       </div>
     </div>
 
