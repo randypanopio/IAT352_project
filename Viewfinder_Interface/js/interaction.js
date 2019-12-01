@@ -2,13 +2,13 @@
 function openSidebar() {
   document.getElementById("mySidebar").style.width = "15%";
   document.getElementById("mySidebar").style.minWidth = "325px";
-  document.getElementById("main").style.marginLeft = "15%";
+  // document.getElementById("gmap_canvas").style.marginLeft = "15%"; //bug where the zoom buttons disappear
 }
 
 function closeSidebar() {
   document.getElementById("mySidebar").style.width = "0";
   document.getElementById("mySidebar").style.minWidth = "0px";
-  document.getElementById("main").style.marginLeft= "0";
+  // document.getElementById("gmap_canvas").style.marginLeft= "0";
 }
 
 function profileDropdown() {
@@ -39,4 +39,12 @@ function openUpload() {
 
 function closeUpload() {
      document.getElementById("hidden-content").style.visibility = "hidden";
+}
+
+
+//suggestions funcs
+function loadSuggestion(suggestion){
+  console.log("working: " + suggestion);
+  document.getElementById("search-bar").value += " " + suggestion;
+
 }
