@@ -75,6 +75,7 @@
                   <button onclick="profileDropdown()" class="dropbtn nav-link js-scroll-trigger nav-link-button" style="background-image: url('img/profile.png')"></button>
                   <div id="myDropdown" class="dropdown-content">
                     <a href="profile.html">View Profile</a>
+                    <a onclick="displayOnboarding()">View Tutorial</a>
                     <a href="index.html#logout">Logout</a>
                   </div>
                 </div>
@@ -222,6 +223,55 @@
       <div id="upload-success-screen" class="overlay-content-container overlay-screen">
         <div class="upload-container">
           <img class="img-responsive" src="img/success.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div id="hidden-onboarding" class="to-be-hidden">
+      <button class="close-upload-btn" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100%; background-color: rgba(163, 163, 163, 0.75);" onclick="closeOnboarding()"></button>
+      <div id="onboard-screen-1" class="overlay-content-container overlay-screen">
+        <div class="overlay-header"><span>Tutorial</span></div>
+        <div class="tutorial-img-container">
+          <img class="img-responsive" src="img/tutorial/onb1.png" />
+        </div>
+        <div class="upload-container" style="height: 20px">
+          <button class="suggestion" onclick="nextOnloadingScreen()">next</button>
+        </div>
+      </div>
+      <div id="onboard-screen-2" class="overlay-content-container overlay-screen">
+        <div class="overlay-header"><span>Tutorial 2</span></div>
+        <div class="tutorial-img-container">
+          <img class="img-responsive" src="img/tutorial/onb2.png" />
+        </div>
+        <div class="upload-container" style="height: 20px">
+          <button class="suggestion" onclick="nextOnloadingScreen()">next</button>
+        </div>
+      </div>
+      <div id="onboard-screen-3" class="overlay-content-container overlay-screen">
+        <div class="overlay-header"><span>Tutorial 3</span></div>
+        <div class="tutorial-img-container">
+          <img class="img-responsive" src="img/tutorial/onb3.png" />
+        </div>
+        <div class="upload-container" style="height: 20px">
+          <button class="suggestion" onclick="nextOnloadingScreen()">next</button>
+        </div>
+      </div>
+      <div id="onboard-screen-4" class="overlay-content-container overlay-screen">
+        <div class="overlay-header"><span>Tutorial</span></div>
+        <div class="tutorial-img-container">
+          <img class="img-responsive" src="img/tutorial/onb4.png" />
+        </div>
+        <div class="upload-container" style="height: 20px">
+          <button class="suggestion" onclick="nextOnloadingScreen()">next</button>
+        </div>
+      </div>
+      <div id="onboard-screen-5" class="overlay-content-container overlay-screen">
+        <div class="overlay-header"><span>Tutorial</span></div>
+        <div class="tutorial-img-container">
+          <img class="img-responsive" src="img/tutorial/onb5.png" />
+        </div>
+        <div class="upload-container" style="height: 20px">
+          <button class="suggestion" onclick="nextOnloadingScreen()">next</button>
         </div>
       </div>
     </div>

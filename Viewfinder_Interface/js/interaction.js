@@ -1,4 +1,66 @@
 
+// onboarding Check
+
+window.onload = function () {
+    if (localStorage.getItem("firstVisit") === null) {
+        displayOnboarding();
+        localStorage.setItem("firstVisit", true);
+    }
+}
+
+var onboardingStage = 0;
+function displayOnboarding () {
+  document.getElementById("hidden-onboarding").style.visibility = "visible";
+  document.getElementById("onboard-screen-1").style.display = "flex";
+  onboardingStage = 1;
+  console.log("first time user");
+}
+
+function closeOnboarding() {
+  document.getElementById("hidden-onboarding").style.visibility = "hidden";
+  document.getElementById("onboard-screen-1").style.display = "none";
+  document.getElementById("onboard-screen-2").style.display = "none";
+  document.getElementById("onboard-screen-3").style.display = "none";
+  document.getElementById("onboard-screen-4").style.display = "none";
+  document.getElementById("onboard-screen-5").style.display = "none";
+}
+
+function nextOnloadingScreen() {
+  onboardingStage++;
+  console.log(onboardingStage);
+
+  switch (onboardingStage) {
+    case 1:
+      document.getElementById("onboard-screen-1").style.display = "flex";
+
+      break;
+    case 2:
+      document.getElementById("onboard-screen-2").style.display = "flex";
+      document.getElementById("onboard-screen-1").style.display = "none";
+
+      break;
+    case 3:
+      document.getElementById("onboard-screen-3").style.display = "flex";
+      document.getElementById("onboard-screen-2").style.display = "none";
+
+      break;
+    case 4:
+      document.getElementById("onboard-screen-4").style.display = "flex";
+      document.getElementById("onboard-screen-3").style.display = "none";
+
+      break;
+    case 5:
+      document.getElementById("onboard-screen-5").style.display = "flex";
+      document.getElementById("onboard-screen-4").style.display = "none";
+      break;
+    case 6:
+      closeOnboarding();
+      break;
+    default:
+    document.getElementById("onboard-screen-1").style.display = "flex";
+  }
+}
+
 function openSidebar() {
   document.getElementById("mySidebar").style.width = "15%";
   document.getElementById("mySidebar").style.minWidth = "325px";
