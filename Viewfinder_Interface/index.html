@@ -24,24 +24,45 @@
         <div class="container navbar-subcontainer">
           <a class="navbar-brand" href="index.html">[ Viewfinder ]</a>
           <!-- search bar -->
-          <div>
-            <input />
-            <button>search</button>
-          </div>
+          <form class="search-bar" style="margin:auto;max-width:300px">
+            <input type="text" placeholder="Search.." name="search" id="search-bar">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
           <!-- search suggestions -->
           <div class="suggestions-container">
-            <button class="suggestion">
-                  Industrial <span class="plusbtn">+</span>
-            </button>
-            <button class="suggestion">
-                  Architecture <span class="plusbtn">+</span>
-            </button>
-            <button class="suggestion">
-                  Post-Modern <span class="plusbtn">+</span>
-            </button>
-            <button class="suggestion">
-                  Underground <span class="plusbtn">+</span>
-            </button>
+            <span id="suggestions1">
+              <button onclick="loadSuggestion('Industrial')" class="suggestion">
+                    Industrial <span class="plusbtn"><i class="fa fa-plus" style="font-size: 12px;" aria-hidden="true"></i></span>
+              </button>
+              <button onclick="loadSuggestion('Architecture')" class="suggestion">
+                    Architecture <span class="plusbtn"><i class="fa fa-plus" style="font-size: 12px;" aria-hidden="true"></i></span>
+              </button>
+              <button onclick="loadSuggestion('Post-Modern')" class="suggestion">
+                    Post-Modern <span class="plusbtn"><i class="fa fa-plus" style="font-size: 12px;" aria-hidden="true"></i></span>
+              </button>
+              <button onclick="loadSuggestion('Underground')" class="suggestion">
+                    Underground <span class="plusbtn"><i class="fa fa-plus" style="font-size: 12px;" aria-hidden="true"></i></span>
+              </button>
+            </span>
+            <span id="suggestions2" style="display:none;">
+              <button onclick="loadSuggestion('Parks')" class="suggestion">
+                    Parks <span class="plusbtn"><i class="fa fa-plus" style="font-size: 12px;" aria-hidden="true"></i></span>
+              </button>
+              <button onclick="loadSuggestion('Nature')" class="suggestion">
+                    Nature <span class="plusbtn"><i class="fa fa-plus" style="font-size: 12px;" aria-hidden="true"></i></span>
+              </button>
+              <button onclick="loadSuggestion('Wild')" class="suggestion">
+                    Wild <span class="plusbtn"><i class="fa fa-plus" style="font-size: 12px;" aria-hidden="true"></i></span>
+              </button>
+              <button onclick="loadSuggestion('Gardens')" class="suggestion">
+                    Gardens <span class="plusbtn"><i class="fa fa-plus" style="font-size: 12px;" aria-hidden="true"></i></span>
+              </button>
+            </span>
+
+            <span>
+              <button class="suggestion" style="border: none; font-size: 26px;" onclick="reloadSuggestions()"><i class="fa fa-undo" aria-hidden="true"></i></i></button>
+            </span>
+
           </div>
 
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,7 +72,7 @@
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
                 <div class="dropdown">
-                  <button onclick="profileDropdown()" class="dropbtn nav-link js-scroll-trigger nav-link-button">Profile</button>
+                  <button onclick="profileDropdown()" class="dropbtn nav-link js-scroll-trigger nav-link-button" style="background-image: url('img/profile.png')"></button>
                   <div id="myDropdown" class="dropdown-content">
                     <a href="profile.html">View Profile</a>
                     <a href="index.html#logout">Logout</a>
@@ -74,26 +95,53 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">×</a>
         <div class="sidebar-container">
           <div>
-            Surrey Art Gallery
+            Vancouver, BC | Arts Organization
+            <br />
+            <b style="font-size: 22px;">Vancouver Art Gallery</b>
+          </div>
+          <hr />
+          <div class="sidebar-action-buttons">
+            <div>
+              <i class="fa fa-map-marker" aria-hidden="true"></i> <span>Directions </span>
+            </div>
+            <div>
+              <i class="fa fa-bookmark" aria-hidden="true"></i> <span>Bookmark </span>
+            </div>
+            <div>
+              <i class="fa fa-share-alt" aria-hidden="true"></i> <span>Share </span>
+            </div>
+          </div>
+          <hr />
+          <div>
+            <i class="fa fa-home" aria-hidden="true"></i> <b>Location Type: Indoors</b>
           </div>
           <div>
-            Directions
-            Save
-            Share
+            <i class="fa fa-clock-o" aria-hidden="true"></i> <b>Hours: 7:30 AM - 9:20 PM</b>
           </div>
+          <hr />
           <div>
-            Location type
-          </div>
-          <div>
-            Hours
-          </div>
-          <div>
-            things to know
+            <i class="fa fa-calendar-check-o" aria-hidden="true"></i> <b>Things to know:</b>
+            <br />
+            <p>
+              Ensure to keep in mind local traffic as the location is a popular place for people to be
+            </p>
           </div>
           <div>
             <div class="">
+                <img class="img-responsive" src="img/gallery/bridge2.jpg" alt="">
+            </div>
+            <hr?>
+            <hr />
+            <div class="">
+                <img class="img-responsive" src="img/gallery/bridge1.jpg" alt="">
+            </div>
+            <hr?>
+            <hr />
+            <div class="">
                 <img class="img-responsive" src="img/placeholder.png" alt="">
             </div>
+            <hr?>
+            <hr />
           </div>
         </div>
       </div>
@@ -121,23 +169,39 @@
         </div>
       </section>
 
-      <button class="openbtn" style="position: absolute; top: 50%; left: 50%;" onclick="openSidebar()">Open Sidebar</button>
-      <button class="bottom-right-buttons right-one" onclick="openUpload()">Upload</button>
-      <a class="bottom-right-buttons right-two" href="gallery.html">Gallery</a>
+      <button class="openbtn" onclick="openSidebar()"><img src="img/marker.png" /></button>
+      <div class="bottom-right-buttons-container">
+        <button class="bottom-right-buttons right-one" onclick="openUpload()"><i class="fa fa-upload" aria-hidden="true"></i></button>
+        <button class="bottom-right-buttons right-two" onclick="window.location.href='./gallery.html'"><i class="fa fa-picture-o" aria-hidden="true"></i></button>
+      </div>
+
 
 
     </div>
 
 
-    <div id="hidden-content">
-      <button class="openbtn" style="position: absolute; top: 25%; left: 50%; width: 150px; height: 30px;" onclick="closeUpload()">clsoe uploadr</button>
-      <div id="upload-content">
+    <div id="hidden-content" class="to-be-hidden">
+      <button class="close-upload-btn" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100%; background-color: rgba(163, 163, 163, 0.75);" onclick="closeUpload()"></button>
+      <div id="upload-screen" class="upload-dropzone-container overlay-screen">
+        Upload
+        <div  class="dropzone">
+          <button onclick="loadReviewScreen()">upload</button>
+        </div>
+      </div>
+      <div id="upload-review-screen" class="upload-dropzone-container overlay-screen">
+        <button onclick="loadSuccessScreen()">submit</button>
+      </div>
+      <div id="upload-success-screen" class="upload-dropzone-container overlay-screen">
+        success
       </div>
     </div>
+
 
     <!-- my scripts -->
     <script src="js/interaction.js"></script>
     <!-- vendor scripts -->
+    <script src="js/vendor/dropzone.js"></script>
+    <script src="https://use.fontawesome.com/e27e394292.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
