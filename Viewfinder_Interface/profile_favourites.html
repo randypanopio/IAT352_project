@@ -56,34 +56,33 @@
     <div class="container">
       <div class="row d-flex justify-content-center">
         <div class="col-md-3 content-row">
-          <div class="overlay-header"><a><b>Your Galleries</b></a></div>
+          <div class="overlay-header"><a href="profile.html">Your Galleries</a></div>
         </div>
         <div class="col-md-3 content-row">
-          <div class="overlay-header"><a href="profile_favourites.html">Favourites</a></div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6 content-row map-card">
-          <div class="hovereffect transparent-bg-image">
-            <img class="img-responsive " src="img/gallery1.png" alt="">
-          </div>
-        </div>
-        <div class="col-md-6 content-row map-card">
-          <div class="hovereffect transparent-bg-image">
-            <img class="img-responsive " src="img/gallery2.png" alt="">
-          </div>
+          <div class="overlay-header"><a><b>Favourites</b></a></div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6 content-row map-card">
-          <div class="hovereffect transparent-bg-image">
-            <img class="img-responsive " src="img/gallery3.png" alt="">
+        <div class="col-md-6 content-row">
+          <div class="hovereffect">
+            <img class="img-responsive" src="img/gallery/mountain.jpg" alt="" onclick="previewImage('mountain')">
           </div>
         </div>
-        <div class="col-md-6 content-row map-card">
-          <div class="hovereffect transparent-bg-image">
-            <img class="img-responsive " src="img/new_gallery.png" alt="">
+        <div class="col-md-6 content-row">
+          <div class="hovereffect">
+            <img class="img-responsive" src="img/gallery/park1.jpg" alt="" onclick="previewImage('park1')">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 content-row">
+          <div class="hovereffect">
+            <img class="img-responsive" src="img/gallery/bridge2.jpg" alt="" onclick="previewImage('bridge2')">
+          </div>
+        </div>
+        <div class="col-md-4 content-row">
+          <div class="hovereffect">
+            <img class="img-responsive" src="img/gallery/bridge1.jpg" alt="" onclick="previewImage('bridge1')">
           </div>
         </div>
       </div>
@@ -113,6 +112,56 @@
       success
     </div>
   </div>
+
+  <div id="hidden-image-content"  class="to-be-hidden">
+    <button class="close-upload-btn" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100%; background-color: rgba(163, 163, 163, 0.75);" onclick="closeImage()"></button>
+    <div id="image-content-container" class="upload-dropzone-container overlay-screen">
+      <div class="overlay-header"><span id="image-content-title">Title</span></div>
+      <div class="inner-image-content container">
+        <div class="row">
+        <div class="col-md-4">
+          <div>
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <span id="image-content-uploader">uploader</span>
+          </div>
+          <div>
+            <i class="fa fa-heart" aria-hidden="true"></i>
+            <span id="image-content-likes">Likes</span>
+          </div>
+          <div class="image-settings" style="display: flex; flex-direction: row">
+            <div class="icons-container">
+              <span><i class="fa fa-circle-o" aria-hidden="true"></i>f/3.2</span>
+              <span><i class="fa fa-clock-o" aria-hidden="true"></i> 1/60</span>
+              <span><i class="fa fa-bolt" aria-hidden="true"></i>OFF</span>
+            </div>
+            <div class="icons-container" style="margin-left: 18px;">
+              <span><i class="fa fa-eye" aria-hidden="true"></i>200mm</span>
+              <span><span style="font-size:8px; border: 1px solid #333; padding:2px; margin-right: 4px;">ISO </span> 800</span>
+              <span><i class="fa fa-info-circle" aria-hidden="true"></i>Exif</span>
+            </div>
+          </div>
+          <div>
+            <b>Photo Condition</b><br />
+            <p>
+              Taken at 9:00 am with natural light and standard tripod
+            </p>
+          </div>
+          <div>
+            <button class="suggestion" onclick="window.location.href='./index.html'">Check Location</button>
+          </div>
+        </div>
+
+          <div class="col-md-8 content-row map-card">
+            <div class="">
+              <img id="preview-image" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
     <!-- Footer -->
   <footer>
     <div class="container text-center ">

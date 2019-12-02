@@ -12,6 +12,13 @@
 
 //image-settings
 
+.transparent-bg-image {
+  background: transparent !important;
+  img {
+    background: transparent !important;
+  }
+}
+
 #image-content-container {
   display: flex;
   flex-direction: column;
