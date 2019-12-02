@@ -82,6 +82,63 @@ function loadSuccessScreen() {
 //     closeUpload();
 //   });
 // }
+function previewImage(data) {
+  document.getElementById("hidden-image-content").style.visibility = "visible";
+  document.getElementById("image-content-container").style.display = "flex";
+  document.getElementById("preview-image").src = "img/gallery/" + data + ".jpg";
+  if (data == "morning") {
+    document.getElementById("image-content-title").innerHTML = "Early Morning Rise";
+
+    document.getElementById("image-content-uploader").innerHTML = "Mary Witherspoon";
+    document.getElementById("image-content-likes").innerHTML = "93";
+  }
+
+  switch (data) {
+    case "building":
+      document.getElementById("image-content-title").innerHTML = "Appliance hanging by building";
+      document.getElementById("image-content-uploader").innerHTML = "Annie Spratt";
+      document.getElementById("image-content-likes").innerHTML = "43";
+      break;
+    case "suspension":
+      document.getElementById("image-content-title").innerHTML = "Tree Ladder in Forest";
+      document.getElementById("image-content-uploader").innerHTML = "Ivana Cajina";
+      document.getElementById("image-content-likes").innerHTML = "202";
+      break;
+    case "forest":
+      document.getElementById("image-content-title").innerHTML = "Early Morning Rise";
+      document.getElementById("image-content-uploader").innerHTML = "Mary Witherspoon";
+      document.getElementById("image-content-likes").innerHTML = "93";
+      break;
+    case "bridge1":
+      document.getElementById("image-content-title").innerHTML = "Bridge at Nighttime";
+      document.getElementById("image-content-uploader").innerHTML = "Priscilla Du Preez";
+      document.getElementById("image-content-likes").innerHTML = "367";
+      break;
+    case "mountain":
+      document.getElementById("image-content-title").innerHTML = "Pickup Truck on Bridge";
+      document.getElementById("image-content-uploader").innerHTML = "James Walsh";
+      document.getElementById("image-content-likes").innerHTML = "93";
+      break;
+    case "park1":
+      document.getElementById("image-content-title").innerHTML = "Aerial Photo of Island";
+      document.getElementById("image-content-uploader").innerHTML = "Gabriel Santiago";
+      document.getElementById("image-content-likes").innerHTML = "11";
+      break;
+    case "bridge2":
+      document.getElementById("image-content-title").innerHTML = "Aerial View of Island with Bridge";
+      document.getElementById("image-content-uploader").innerHTML = "Lee Robinson";
+      document.getElementById("image-content-likes").innerHTML = "102";
+      break;
+    default:
+      document.getElementById("image-content-title").innerHTML = "Early Morning Rise";
+      document.getElementById("image-content-uploader").innerHTML = "Mary Witherspoon";
+      document.getElementById("image-content-likes").innerHTML = "93";
+  }
+}
+
+function closeImage(){
+  document.getElementById("hidden-image-content").style.visibility = "hidden";
+}
 
 
 //suggestions funcs
