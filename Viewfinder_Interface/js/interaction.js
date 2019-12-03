@@ -16,6 +16,26 @@ function displayOnboarding () {
   console.log("first time user");
 }
 
+function displayDirections() {
+  document.getElementById("hidden-directions").style.visibility = "visible";
+}
+
+function closeDirections() {
+  document.getElementById("hidden-directions").style.visibility = "hidden";
+}
+
+function saveBookmark() {
+  document.getElementById("hidden-bookmarks").style.visibility = "visible";
+  setTimeout(function() {
+    closeBookmarksOverlay();
+  }, 15000)
+}
+
+function closeBookmarksOverlay() {
+  document.getElementById("hidden-bookmarks").style.visibility = "hidden";
+}
+
+
 function closeOnboarding() {
   document.getElementById("hidden-onboarding").style.visibility = "hidden";
   document.getElementById("onboard-screen-1").style.display = "none";
